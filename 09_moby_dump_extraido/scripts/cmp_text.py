@@ -12,7 +12,7 @@ def moby_def(nm, kind):
                 return X.pp(val)
     return None
 rows = []
-for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '7_its_vault_SHRDLU_original', 'z.*'))):
+for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '07_its_vault_SHRDLU_original', 'z.*'))):
     base = os.path.basename(f)
     for form in read_all(open(f, encoding='latin-1').read()):
         if not isinstance(form, tuple): continue

@@ -15,7 +15,7 @@ Testado em 10–13/10/2026 num Linux (Ubuntu), com o emulador KA10 do projeto PD
 
 ## 3. Fita com o diretório SHRDLU antigo
 - `make -C tools/itstar`
-- Copie os arquivos de `7_its_vault_SHRDLU_original/` para uma pasta `oshrdl/`.
+- Copie os arquivos de `07_its_vault_SHRDLU_original/` para uma pasta `oshrdl/`.
 - `tools/itstar/itstar -cf oshrdl.tape -C . oshrdl`
 - Ajuste o caminho da fita no `run.ini` (linha `at mta0 ...`).
 

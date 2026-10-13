@@ -1,4 +1,4 @@
-Comparacao: seus 22 arquivos MacLisp (pacote Sakana, original_maclisp/) x arquivos importados das fitas do MIT (PDP-10/its, commit ace4248)
+Comparacao: os 22 arquivos MacLisp do pacote de trabalho deste projeto (original_maclisp/, copia da distribuicao de Stanford, code.tar) x arquivos importados das fitas do MIT (PDP-10/its, commit ace4248)
 Metodo: diff ignorando apenas espacos e linhas em branco (diff -w -B).
 
 blockl = blockl.4: IDENTICO (difere so em espacos/linhas em branco)

@@ -2,7 +2,7 @@ Como reproduzir a extracao do moby dump (passo a passo)
 
 1. Compile o dis10:  git clone https://github.com/larsbrinkhoff/pdp10-its-disassembler
                      cd pdp10-its-disassembler && make dis10
-2. Desmonte a imagem: ./dis10 -Wits -Snone ../7_its_vault_SHRDLU_original/moby.dump > moby_dis.txt
+2. Desmonte a imagem: ./dis10 -Wits -Snone ../07_its_vault_SHRDLU_original/moby.dump > moby_dis.txt
 3. Nesta pasta (scripts), rode na ordem:
      python3 mem.py caminho/para/moby_dis.txt moby.pkl
      python3 atoms.py

@@ -190,7 +190,7 @@ Nenhuma frase está errada. Seis saem quase iguais.
 
 ## Comparação com a versão reescrita (1973–74) rodando em 2024
 
-A sessão de Eric Swenson (pasta `5_transcricao_ITS_2024/`) usa o código reescrito. Ela não segue o roteiro inteiro, então só dá para comparar algumas frases:
+A sessão de Eric Swenson (pasta `05_transcricao_ITS_2024/`) usa o código reescrito. Ela não segue o roteiro inteiro, então só dá para comparar algumas frases:
 
 | nº | versão reescrita, 2024 | moby dump, rodada 15 | tese |
 |---|---|---|---|
@@ -248,7 +248,7 @@ Nada é alterado nos arquivos originais; tudo é redefinido na hora de rodar, po
 3. Contornos do ambiente MacLisp/ITS: `READCH` e um invólucro de `PUTPROP` (2).
 4. Função que não existe em lugar nenhum, reconstruída por mim: `FINDQ` (1).
 5. Correções de erros do código da época (restauração): `SMONE`, `SMPROP`, `SMADJ`, `SMIT3`, THMLIST de `#LOC`, `ANS2` parte 1 (6).
-6. Escolhas minhas com justificativa (reconstrução): `WHO`, MODAL zerado, `GOALIZE2`, `SMRSQ`, `SMNG1`, `SIZE`, `ANS2` parte 2, e dois remendos no código de máquina da gramática compilada (`remendo_ng.lisp`) (8).
+6. Escolhas minhas com justificativa (reconstrução): `WHO`, MODAL zerado, `GOALIZE2`, `SMRSQ`, `SMNG1`, `SIZE`, `ANS2` parte 2, e o remendo na gramática compilada (`remendo_ng.lisp`: duas palavras de código de máquina alteradas, contadas como uma intervenção) (8).
 Total: 18 intervenções de código mais 4 variáveis. Cada uma tem a explicação nas seções acima.
 
 Sessão nova, as 46 frases, as correções da rodada 15 mais `ans2_corrigida.lisp`. Transcrição: `transcricoes/rodada16_definitiva.txt`; tabela: `tabela_rodada16.tsv`.
@@ -258,6 +258,8 @@ Sessão nova, as 46 frases, as correções da rodada 15 mais `ans2_corrigida.lis
 2. Reconstrução pela tese (seção 4.4.2, p. 388): perguntas HOW MANY respondem sempre "OF THEM". Por isso o teste HOWMANY vem antes do teste VAGUE. A versão de 1972 (NAMESUGAR, `newans.78`) lê a mesma marca #VAGUE.
 
 Efeito: a 16 fica igual à tese ("YES, TWO THINGS: ..."); a 46 passa a dizer "FOUR THINGS"; a 24 e a 33 continuam "OF THEM", como na tese. Nenhuma frase piorou.
+
+**NOSTOP, para quem for conferir.** No código da época, NOSTOP só é consultado em ERT (`z.syscom`, linha 50: `(AND NOSTOP (ERR NIL))`, isto é, com NOSTOP T um ponto de parada vira erro e volta ao nível de cima em vez de esperar o teclado), em ERTSTOP (que liga NOSTOP NIL e para sempre), no caminho de "I DON'T UNDERSTAND" (`z.syscom`, linha 571) e em THVAL2 quando PLANNERSEE está ligado (`z.semant`, linha 778). A pergunta de esclarecimento da frase 24 ("DO YOU MEAN: 1 - ... 2 - ...") é feita por YELL (`z.answer`, linha 725) e não depende de NOSTOP: ela só sai quando a frase tem mais de uma interpretação e a primeira não vence a segunda por mais de TIMID. Pelo código, a única forma de a pergunta não sair é a frase 24 chegar a YELL com uma interpretação só, ou com uma vencedora folgada; a causa está antes, na análise semântica de "on top of", e não foi investigada. A transcrição de 2024 da versão reescrita, com NOSTOP NIL, também responde a 24 sem a pergunta.
 
 **Frase 46: por que continua "THE BLUE BLOCK".** A base mostra `(#CALL :B6 SUPERBLOCK)`: o programa dá o nome ao bloco vermelho grande. "Biggest" usa #SIZE, que na imagem é `(LAMBDA (X) (APPLY 'PLUS (SIZE X)))`, a soma das dimensões (a tese diz o mesmo, seção 3.4.2). Com os tamanhos do arquivo de dados (iguais em 1971, 1972 e 2024), B6 (200 300 300) soma 1000 e B10 (200 100 400) soma 700, em octal. O B10 só seria o "superblock" com outros dados; não mexi.
 

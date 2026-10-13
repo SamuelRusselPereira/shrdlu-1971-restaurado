@@ -3,7 +3,7 @@ import os
 import re, sys, pickle, glob, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import extract as X
-Z = sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '7_its_vault_SHRDLU_original', 'z.*')))
+Z = sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '07_its_vault_SHRDLU_original', 'z.*')))
 defs = []
 for f in Z:
     txt = open(f, encoding='latin-1').read()
