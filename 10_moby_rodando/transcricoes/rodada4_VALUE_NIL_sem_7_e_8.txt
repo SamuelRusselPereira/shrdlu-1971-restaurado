@@ -1,0 +1,173 @@
+=== sessao nova (VALUE NIL), pulando 7 e 8
+=== 1 pick up a big red block.
+[]
+PICK UP A BIG RED BLOCK.
+* 
+*  OK.
+=== 2 grasp the pyramid.
+[]
+GRA
+READY/
+ SP THE PYRAMID.
+*
+*  I DON'T KNOW WHICH PYRAMID YOU MEAN.
+=== 3 find a block which is taller than the one you are holding and put it into the box.
+[espaco]
+FIND
+READY/
+  A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX.
+* 
+*   OK.
+BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM
+  HOLDING.
+
+*  OK.
+READY/
+ 
+=== 4 what does the box contain?
+[]
+WHAT DOES THE BOX CONTAIN?
+* 
+*  THE BLUE PYRAMID AND THE BLUE BLOCK.
+=== 5 what is the pyramid supported by?
+[]
+WHAT
+READY/
+  IS THE PYRAMID SUPPORTED BY?
+* 
+FINDQ UNDEFINED FUNCTION - EVAL
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 6 how many blocks are not in the box?
+[]
+HOW MANY BLOCKS ARE NOT IN THE BOX?
+* 
+* FOUR OF THEM.
+=== 9 can the table pick up blocks?
+[]
+C
+READY/
+ AN THE TABLE PICK UP BLOCKS?
+* 
+*  NO.
+=== 10 can a pyramid be supported by a block?
+[]
+CAN 
+READY/
+ A PYRAMID BE SUPPORTED BY A BLOCK?
+* 
+*  YES.
+=== 11 can a pyramid support a pyramid?
+[]
+CAN
+READY/
+  A PYRAMID SUPPORT A PYRAMID?
+* 
+*  I DON'T KNOW.
+=== 12 stack up two pyramids.
+[]
+STAC
+READY/
+ K UP TWO PYRAMIDS.
+* 
+*  I CAN'T.
+=== 13 the blue pyramid is nice.
+[]
+THE 
+READY/
+ BLUE PYRAMID IS NICE.
+* FIRST ARG NONATOMIC - PUTPROP
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 14 i like blocks which are not red, but i don't like anything which supports a pyramid.
+[]
+I LIKE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PY!
+RAMID.
+* TOO FEW ARGUMENTS SUPPLIED - APPLY
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 15 do i like the box?
+[]
+DO I LIKE THE BOX?
+* 
+*  I DON'T KNOW.
+=== 16 do i like anything in the box?
+[]
+DO I
+READY/
+  LIKE ANYTHING IN THE BOX?
+* 
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 17 will you please stack up both of the red blocks and either a green cube or a pyramid?
+[parada do planner: NIL]
+WILL YOU PLEASE STACK UP BOTH OF THE RED BLOCKS AND EITHER A GREEN CUBE OR A P!
+YRAMID?
+* 
+NIL
+>>>  THUNBOUND THGAL
+LISTENING
+NIL 
+*  I CAN'T.
+=== 18 which cube is sitting on the table?
+[]
+WHIC
+READY/
+ H CUBE IS SITTING ON THE TABLE?
+*
+(WHICH THE TABLE)
+READY/
+ 
+=== 19 is there a large block behind a pyramid?
+[]
+IS THERE A LARGE BLOCK BEHIND A PYRAMID?
+* 
+*  NO.
+=== 20 put a small one onto the green cube which supports a pyramid.
+[]
+PU
+READY/
+ T A SMALL ONE ONTO THE GREEN CUBE WHICH SUPPORTS A PYRAMID.
+* CAR MADE ILGL MEM REF
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 21 put the littlest pyramid on top of it.
+[]
+PUT THE LITTLEST PYRAMID ON TOP OF IT.
+*
+*  I DON'T KNOW WHICH LITTLEST PYRAMID YOU MEAN.
+=== 22 does the shortest thing the tallest pyramid's support supports support anything green?
+[]
+DOES 
+READY/
+ THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS SUPPORT ANYTHING GRE!
+EN?
+*
+(WHICH THE TALLEST PYRAMID"S)
+READY/
+ 
+=== 23 what color is it?
+[]
+WHAT COLOR IS IT?
+* 
+BY "IT", I ASSUME YOU MEAN
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 24 how many things are on top of green cubes?
+[respondeu 2, espaco, espaco, espaco, espaco, PARADO]
+HOW MANY THINGS ARE ON TOP OF GREEN CUBES?
+*  I'M NOT SURE WHAT YOU MEAN BY "ON TOP OF "  IN THE PHRASE "ON TOP OF
+  GREEN CUBES "  . DO YOU MEAN:
+1 - DIRECTLY ON THE SURFACE
+2 - ANWHERE ON TOP OF ?2 
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS

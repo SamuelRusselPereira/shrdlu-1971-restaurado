@@ -1,0 +1,34 @@
+Comparacao: seus 22 arquivos MacLisp (pacote Sakana, original_maclisp/) x arquivos importados das fitas do MIT (PDP-10/its, commit ace4248)
+Metodo: diff ignorando apenas espacos e linhas em branco (diff -w -B).
+
+blockl = blockl.4: IDENTICO (difere so em espacos/linhas em branco)
+blockp = blockp.3: IDENTICO (difere so em espacos/linhas em branco)
+cgram: so existe na copia de Stanford (nao veio nas fitas importadas)
+data = data.6: IDENTICO (difere so em espacos/linhas em branco)
+dictio = dictio.73: IDENTICO (difere so em espacos/linhas em branco)
+ginter = ginter.5: IDENTICO (difere so em espacos/linhas em branco)
+gramar = gramar.28: IDENTICO (difere so em espacos/linhas em branco)
+init: so existe na copia de Stanford (nao veio nas fitas importadas)
+loader = loader.18: IDENTICO (difere so em espacos/linhas em branco)
+macros: so existe na copia de Stanford (nao veio nas fitas importadas)
+morpho = morpho.13: IDENTICO (difere so em espacos/linhas em branco)
+newans = newans.78: IDENTICO (difere so em espacos/linhas em branco)
+parser: so existe na copia de Stanford (nao veio nas fitas importadas)
+plnr x plnr.182: DIFERENTE (2 linhas)
+progmr = progmr.57: IDENTICO (difere so em espacos/linhas em branco)
+setup = setup.62: IDENTICO (difere so em espacos/linhas em branco)
+show = show.13: IDENTICO (difere so em espacos/linhas em branco)
+smass = smass.19: IDENTICO (difere so em espacos/linhas em branco)
+smspec x smspec.94: DIFERENTE (50 linhas)
+smutil x smutil.148: DIFERENTE (6 linhas)
+syscom = syscom.180: IDENTICO (difere so em espacos/linhas em branco)
+thtrac = thtrac.22: IDENTICO (difere so em espacos/linhas em branco)
+blocks.144: so existe nas fitas do MIT (voce nao tem)
+graphf.3: so existe nas fitas do MIT (voce nao tem)
+twutil.14: so existe nas fitas do MIT (voce nao tem)
+
+Notas sobre os 3 marcados DIFERENTE:
+- plnr: so a marca de fim de arquivo do ITS (^L^L^C^L) na ultima linha. Codigo igual.
+- smutil: um retorno de carro (^M) dentro de 2 comentarios virou quebra de linha. Codigo igual.
+- smspec: 25 linhas corrompidas (bits trocados) nas funcoes SMONE3, SMPOSS, SMPOSS2 e SMRELATE.
+  A copia das fitas do MIT esta limpa. Ver smspec_corrupcao_stanford.diff.

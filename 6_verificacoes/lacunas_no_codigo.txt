@@ -1,0 +1,23 @@
+Lacunas no codigo que sobreviveu (copia limpa das fitas do MIT, PDP-10/its commit ace4248).
+Busca mecanica com grep. Linhas: arquivo:linha:texto.
+
+== Funcoes que so existem como aviso 'NOT WRITTEN' ==
+newans.78:1142:	      (ert sorry, plnr-orify not written))
+smspec.94:10:(DEFUN SMTIME NIL (ERT SMTIME NOT WRITTEN YET)) 
+smspec.94:12:(DEFUN SMTIME2 NIL (ERT SMTIME2 NOT WRITTEN YET)) 
+smspec.94:130:(DEFUN SMADJGQSHORT NIL (ERT SMADJQSHORT NOT WRITTEN YET)) 
+smspec.94:147:(DEFUN SMADV NIL (ERT SMADV NOT WRITTEN YET)) 
+smspec.94:149:(DEFUN SMPLACE NIL (ERT SMPLACE NOT WRITTEN YET)) 
+smspec.94:151:(DEFUN SMTOADJ NIL (ERT SMTOADJ (UNCT) NOT WRITTEN YET)) 
+
+== LASTEVENT / LASTANSEVENT: unicas ocorrencias (lidas, documentadas, nunca preenchidas) ==
+smspec.94:284:		  (RETURN (SMSET LASTEVENT)))
+smutil.148:330:       ;;;	2. SET LASTEVENT TO THE EVENT DESCRIBED IN THIS SENTENCE
+smutil.148:332:       ;;;	3. SET LASTANSEVENT TO THE EVENT DESCRIBED IN THE 
+
+== Comentarios datados (o codigo foi editado depois da tese de 1971 e do livro de 1972) ==
+newans.78:776:	UP   (SETQ COUNT 1.)					       ;THE BACKREF HACKER - DDM 5-12-73 INSTRUCTIONS
+syscom.180:119:;;;   should be all of them but at the moment (8/6/74) that can't be
+syscom.180:319:;;; VERACTITY IN THE PRESENT DAY ENVIRONMENT (6/24/74)
+#files.6:5:*          by Terry Winograd (currently at Stanford University)
+mannew.2:14:          SHRDLU version 101   created on 4-27-73

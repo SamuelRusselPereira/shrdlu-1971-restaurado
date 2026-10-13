@@ -1,0 +1,39 @@
+=== continuacao a partir de S42 com SMPROP corrigida
+=== 42 call the biggest block "superblock".
+[]
+CALL THE BIGGEST BLOCK "SUPERBLOCK".
+* 
+*  OK.
+=== 43 have you picked up superblock since we began?
+[]
+HAVE
+READY/
+  YOU PICKED UP SUPERBLOCK SINCE WE BEGAN?
+*
+*  YES.
+=== 44 why did you drop it?
+[]
+WHY 
+READY/
+ DID YOU DROP IT?
+*
+BY "IT", I ASSUME YOU MEAN THE SUPERBLOCK.
+
+*  I CAN'T EXPLAIN A NON-EXISTENT EVENT.
+=== 45 is there anything to the right of the red pyramid?
+[espaco]
+IS T
+READY/
+ HERE ANYTHING TO THE RIGHT OF THE RED PYRAMID?
+* 
+*  YES, FOUR OF THEM:  THE BOX , THE RED CUBE , THE BLUE PYRAMID AND THE
+  BLUE BLOCK.
+ 
+READY/
+ 
+=== 46 thank you.
+[]
+THANK YOU.
+* *YOU'RE WELCOME!
+READY/
+ 

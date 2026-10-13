@@ -1,0 +1,143 @@
+Frases 28 a 33 da tese (perguntas sobre os atos do robo).
+
+1) O sintoma. "why did you do that?" respondia "NO." A resposta nao vinha da memoria de eventos:
+   o objeto "that" ficava sem significado, a SMCL1 nao montava nenhuma relacao e o programa caia na
+   resposta de emergencia (NOFLAG), que imprime NO. Rastreio do analisador (PARSETRACE):
+
+(SETQ PARSETRACE (QUOTE (NG CLAUSE VG DET PRONREL)))
+(NG CLAUSE VG DET PRONREL)
+(SHRDLU2)
+READY/
+ WHY DID YOU DO THAT?
+*
+(PARSE SUCCEDED)
+NG
+(YOU)
+(PARSE SUCCEDED)
+VG
+(DO)
+(PARSE SUCCEDED)
+NG
+(THAT)
+(PARSE SUCCEDED)
+NG
+(THAT)
+(PARSE SUCCEDED)
+NG
+(YOU)
+(PARSE SUCCEDED)
+VG
+(DO)
+(PARSE SUCCEDED)
+NG
+(THAT)
+(PARSE SUCCEDED)
+NG
+(THAT)
+(PARSE SUCCEDED)
+CLAUSE
+(WHY DID YOU DO THAT)
+*  NO.
+
+   O "that" vira um sintagma nominal sozinho, pelo caminho dos pronomes interrogativos, e a funcao SMTHAT
+   (que liga "that" ao evento da ultima resposta) nunca e chamada.
+
+2) A causa, no fonte de 1971 (z.gramar). Comeco do sintagma nominal (NGSTART), linha 832:
+	((CQ REL) (GO REL))
+   THAT tem a marca PRONREL no dicionario (como WHO, WHAT e WHICH), entao todo "that" e lido como interrogativo.
+   O mesmo teste aparece no objeto de verbo com particula (TRANSP), linhas 192-193:
+((AND(OR(NQ PRONREL)(NQ QADJ))
+(PARSE CLAUSE WHRS OBJ OBJ1))OBB NIL)
+   Por isso "clear off that cube" e "pick up that cube" falhavam.
+
+3) A versao posterior da gramatica (its-vault, grammar/gramar.61):
+       ((OR (NQ QDET) (NQ QPRON)) (FQ QUEST) (GO QUEST))
+   (troca PRONREL por QPRON no comeco do sintagma) e o TRANSP so tem PARSEREL e (PARSE NG OBJ OBJ1):
+	 (: (PARSEREL '((INGOB ING) (TOOB TO)
+				    (SUBTOB SUBTO)
+				    (REPOB REPORT))
+		      '(OBJ OBJ1)
+		      MVB)
+	    OBB
+	    NIL)
+
+4) O codigo compilado na imagem. Comeco do sintagma nominal; 257064 carrega a lista (PRONREL) para o teste NQ:
+257045:  200100206303  move     2, 206303       ;"0! 0S#"
+257046:  201040147564  movei    1, 147564       ;"0(@,]T"
+257047:  014100017610                           ;"!A !^("
+257050:  326040260645  jumpn    1, 260645       ;":P@6&E"
+257051:  200100206303  move     2, 206303       ;"0! 0S#"
+257052:  201040153267  movei    1, 153267       ;"0(@-:W"
+257053:  014100017610                           ;"!A !^("
+257054:  326040260610  jumpn    1, 260610       ;":P@6&("
+257055:  200100206303  move     2, 206303       ;"0! 0S#"
+257056:  201040151151  movei    1, 151151       ;"0(@-)I"
+257057:  014100017610                           ;"!A !^("
+257060:  326040260610  jumpn    1, 260610       ;":P@6&("
+257061:  201040170077  movei    1, 170077       ;"0(@/ _"
+257062:  014740203413                           ;"!G@0<+"
+257063:  326040257067  jumpn    1, 257067       ;":P@5XW"
+257064:  201040206614  movei    1, 206614       ;"0(@0V,"
+257065:  014740203413                           ;"!G@0<+"
+257066:  322040257072  jumpe    1, 257072       ;":0@5XZ"
+257067:  201040206324  movei    1, 206324       ;"0(@0S4"
+257070:  014740205074                           ;"!G@0H\"
+257071:  254000260610  jrst     260610          ;"5@ 6&("
+
+   TRANSP; 254030 carrega (PRONREL), 254033 carrega (QADJ), 254036 carrega (CLAUSE WHRS OBJ OBJ1) para PARSE:
+254030:  201040206614  movei    1, 206614       ;"0(@0V,"
+254031:  014740203413                           ;"!G@0<+"
+254032:  326040254036  jumpn    1, 254036       ;":P@5@>"
+254033:  201040206563  movei    1, 206563       ;"0(@0US"
+254034:  014740203413                           ;"!G@0<+"
+254035:  322040254041  jumpe    1, 254041       ;":0@5@A"
+254036:  201040206527  movei    1, 206527       ;"0(@0U7"
+254037:  014740203077                           ;"!G@08_"
+254040:  326040254101  jumpn    1, 254101       ;":P@5A!"
+
+5) O remendo. Troquei, nos dois lugares, o endereco 206614 = (PRONREL) pelo endereco 111674 = (REL),
+   uma lista que ja existe na imagem (e o fim da lista de marcas de WHO). So WHO tem a marca REL;
+   THAT, que e demonstrativo, deixa de entrar por esse caminho.
+     (DEPOSIT 257064 201040111674)
+     (DEPOSIT 254030 201040111674)
+   (EXAMINE 257064) antes: 201040206614; depois: 201040111674. O mesmo para 254030.
+
+6) O resultado (teste a partir do ponto de controle S28):
+=== a partir de S28 com os dois remendos (PRONREL -> REL)
+=== 29 why did you clear off that cube?
+[]
+WHY DID YOU CLEAR OFF THAT CUBE?
+*
+*  TO PUT IT ON A LARGE GREEN CUBE.
+=== 30 why did you do that?
+[]
+WHY 
+READY/
+ DID YOU DO THAT?
+*
+*  TO STACK UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.
+=== 31 why did you do that?
+[]
+WHY 
+READY/
+ DID YOU DO THAT?
+*
+*  BECAUSE YOU ASKED ME TO.
+=== 32 how did you do it?
+[espaco]
+HOW 
+READY/
+ DID YOU DO IT?
+*
+*  BY PUTTING A LARGE RED BLOCK ON THE TABLE ; THEN LETTING GO OF IT ;
+  THEN PUTTING A LARGE GREEN CUBE ON IT ; THEN LETTING GO OF THAT CUBE
+  ; THEN PUTTING THE RED CUBE ON THAT CUBE ; THEN LETTING GO OF THAT
+  CUBE. 
+READY/
+ 
+=== 33 how many objects did you touch while you were doing it?
+[]
+HOW MANY OBJECTS DID YOU TOUCH WHILE YOU WERE DOING IT?
+* 
+* FOUR OF THEM.
+

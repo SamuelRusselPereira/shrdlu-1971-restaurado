@@ -1,0 +1,15 @@
+Primeira pegada de cada objeto no DEMO.FLICK x centro do topo calculado pelo ATABLE do arquivo data.
+ATENCAO: o MacLisp desta epoca le e imprime numeros em OCTAL. A conta abaixo e feita em octal.
+(centro do topo = x+dx/2, y+dy/2, z+dz)
+
+B7   demo=(100 340 500)  data=(100 340 500)  igual
+B6   demo=(100 440 300)  data=(100 440 300)  igual
+B10  demo=(400 700 400)  data=(400 700 400)  igual
+B2   demo=(150 140 200)  data=(150 140 200)  igual
+B1   demo=(150 140 100)  data=(150 140 100)  igual
+B4   demo=(740 740 201)  data=(740 740 201)  igual
+B5   demo=(540 140 500)  data=(540 140 500)  igual
+B3   demo=(500 100 200)  data=(500 100 200)  igual
+
+8 de 8 objetos batem: o demo foi gravado com o mesmo mundo inicial do arquivo data.
+(Uma versao anterior deste arquivo fazia a conta em decimal e concluia, erradamente, que 5 objetos diferiam.)

@@ -1,0 +1,62 @@
+Frase 35 da tese: "there were five blocks to the left of the box then."
+Tese: NO, ONLY FOUR OF THEM: THE RED CUBE, TWO LARGE GREEN CUBES AND A LARGE RED BLOCK.
+Rodada 13: NO, ONLY, NONE OF THEM.
+
+Os testes abaixo partem do ponto de controle S34 (estado logo depois da frase 34,
+"what did the red cube support before you started to clean it off?", resposta
+"THE GREEN PYRAMID.").
+
+1) Estado em S34.
+(LIST LASTIME LASTSENTNO THTIME LASTEVENT)
+((#TIME (PAST) NIL NIL 20) 41 33 (UNKNOWN (#SUPPORT NG110 UNKNOWN (#TIME (PAST) NIL NIL 20)) NIL))
+   LASTIME e o tempo da frase 34 ("before you started to clean it off"): ate o instante 20.
+
+2) Rastreio da frase 35 (argumentos e valores).
+(> SMVG NIL)
+(> SMVG2 (TIME :NOW) (PAST))
+(< SMVG2 (#TIME (PAST) NIL NIL NIL))
+(> SMTIMW)
+(< SMTIMW (NIL 20 20))                      <- "then" copia o tempo da frase 34
+(> ANS1 ((NG120 (#EXISTS NG120 (#TIME (PAST) NIL 20 20)) NIL) (0) NIL))
+(> THVAL2 NIL (THPUTPROP2 X67 (THFIND ALL (THV X67) (X67) (THGOAL (#IS (THV X67) #BLOCK)) (THGOAL (#LOC #RIGHT :BOX (THV X67) (#TIME (PAST) NIL 20 20))) (THGOAL (#EXISTS (THV X67) (#TIME (PAST) NIL 20 20)) (THUSE TCT-EXISTS))) BIND))
+(< THVAL2 NIL)
+(> ANSX (REL) NIL)
+(< ANSX (NO/,/ ONLY 0 NIL))
+*  NO, ONLY, NONE OF THEM.
+   O "then" funcionou: o tempo da pergunta virou o instante 20. O que falha e a busca.
+   O objetivo (#LOC #RIGHT :BOX X67 tempo) sai sem recomendacao (THUSE ...). Sem
+   recomendacao, o Micro-Planner so procura fatos guardados, e nao ha fatos #LOC:
+   posicao relativa e sempre calculada por teorema. Por isso nenhum bloco passa.
+   (Compare com o #EXISTS logo depois, que sai com (THUSE TCT-EXISTS).)
+
+3) A causa: a lista de teoremas de #LOC perdeu a entrada com tempo.
+   A recomendacao vem da propriedade THMLIST da relacao (z.semant, linhas 762-766),
+   escolhida pelo numero de elementos do objetivo. #LOC com tempo tem 5 elementos.
+(GET (QUOTE #LOC) (QUOTE THMLIST))
+((4 (QUOTE ((THUSE TC-LOC)))))
+   Nao ha entrada para 5. No arquivo z.dictio, o DEFLIST THMLIST (linha 876) tem #LOC duas vezes:
+     linha 892:  (#LOC ((4(QUOTE((THUSE TC-LOC))))(5(QUOTE((THUSE TCT-LOC))))))
+     linha 913:  (#LOC ((4 (QUOTE ((THUSE TC-LOC))))))
+   DEFLIST (z.syscom, linha 21) grava as entradas em ordem com PUTPROP, entao a segunda apaga
+   a primeira. O teorema com tempo, TCT-LOC (z.blocks, linha 975), fica sem uso: nenhum
+   outro lugar dos arquivos Z o chama.
+   A linha 892 esta sem espacos, como outras entradas editadas a mao (#LIKE, o fim de #PUT,
+   #SUPPORT); a linha 913 tem a formatacao do resto do arquivo. Isso sugere que a entrada
+   com tempo foi acrescentada depois, sem notar a repeticao mais abaixo. E so uma pista.
+
+4) Evidencia nas versoes seguintes. dictio.70 e dictio.71 (its-vault, linha 1336) e a versao
+   reescrita (its, src/shrdlu/dictio.76, linha 1355) guardam as duas entradas:
+     THMLIST ((4. '((THUSE TC-LOC))) (5. '((THUSE TCT-LOC))))
+
+5) Correcao (loc_thmlist_corrigida.lisp): gravar o valor da linha 892.
+   (PUTPROP (QUOTE #LOC) (QUOTE ((4 (QUOTE ((THUSE TC-LOC)))) (5 (QUOTE ((THUSE TCT-LOC)))))) (QUOTE THMLIST))
+   Teste a partir de S34:
+(> THVAL2 NIL (THPUTPROP2 X67 (THFIND ALL (THV X67) (X67) (THGOAL (#IS (THV X67) #BLOCK)) (THGOAL (#LOC #RIGHT :BOX (THV X67) (#TIME (PAST) NIL 20 20)) (THUSE TCT-LOC)) (THGOAL (#EXISTS (THV X67) (#TIME (PAST) NIL 20 20)) (THUSE TCT-EXISTS))) BIND))
+(< THVAL2 (:B1 :B3 :B6 :B7))
+(< ANSX (NO/,/ ONLY 4 (:B1 :B3 :B6 :B7)))
+*  NO, ONLY, FOUR OF THEM:  THE RED CUBE , TWO LARGE GREEN CUBES AND A
+  LARGE RED BLOCK.
+
+6) A virgula depois de ONLY. ANS2 imprime "NO, ONLY" e, antes do numero, uma virgula
+   (z.answer, linha 214: (AND X (DPRINT3 (QUOTE /,)))). A tese, demo.1 (linha 123) e
+   demo.flick (linha 216) escrevem "NO, ONLY FOUR OF THEM", sem essa virgula.

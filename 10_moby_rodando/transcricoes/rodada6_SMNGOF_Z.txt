@@ -1,0 +1,182 @@
+=== verificacao: sessao nova, SMNGOF da fonte Z + VALUE NIL, todas as frases
+=== 1 pick up a big red block.
+[]
+PICK UP A BIG RED BLOCK.
+* 
+*  OK.
+=== 2 grasp the pyramid.
+[]
+G
+READY/
+ RASP THE PYRAMID.
+* 
+*  I DON'T KNOW WHICH PYRAMID YOU MEAN.
+=== 3 find a block which is taller than the one you are holding and put it into the box.
+[espaco]
+FI
+READY/
+ ND A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BO!
+X.
+* 
+*   OK.
+BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM
+  HOLDING.
+
+*  OK.
+READY/
+ 
+=== 4 what does the box contain?
+[]
+WHAT DOES THE BOX CONTAIN?
+* 
+*  THE BLUE PYRAMID AND THE BLUE BLOCK.
+
+=== 5 what is the pyramid supported by?
+[]
+WHA
+READY/
+ T IS THE PYRAMID SUPPORTED BY?
+* 
+FINDQ UNDEFINED FUNCTION - EVAL
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 6 how many blocks are not in the box?
+[]
+HOW MANY BLOCKS ARE NOT IN THE BOX?
+* 
+* FOUR OF THEM.
+=== 7 is at least one of them narrower than the one which i told you to pick up?
+[]
+I
+READY/
+ S AT LEAST ONE OF THEM NARROWER THAN THE ONE WHICH I TOLD YOU TO PICK UP?
+* 
+BY "THEM", I ASSUME YOU MEAN THE HOW MANY BLOCKS AM NOT IN THE BOX.
+
+*  YES,  THE RED CUBE.
+=== 8 is it supported?
+[]
+I
+READY/
+ S IT SUPPORTED?
+* 
+BY "IT", I ASSUME YOU MEAN THE AT LEAST ONE OF THEM NARROWER THAN THE
+  ONE WHICH YOU TOLD I TO PICK UP.
+
+*  YES,  BY THE TABLE.
+=== 9 can the table pick up blocks?
+[]
+CAN
+READY/
+  THE TABLE PICK UP BLOCKS?
+* 
+*  NO.
+=== 10 can a pyramid be supported by a block?
+[]
+CA
+READY/
+ N A PYRAMID BE SUPPORTED BY A BLOCK?
+* 
+*  YES.
+=== 11 can a pyramid support a pyramid?
+[]
+CA
+READY/
+ N A PYRAMID SUPPORT A PYRAMID?
+* 
+*  I DON'T KNOW.
+=== 12 stack up two pyramids.
+[]
+ST
+READY/
+ ACK UP TWO PYRAMIDS.
+* 
+*  I CAN'T.
+=== 13 the blue pyramid is nice.
+[]
+THE
+READY/
+  BLUE PYRAMID IS NICE.
+* FIRST ARG NONATOMIC - PUTPROP
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 14 i like blocks which are not red, but i don't like anything which supports a pyramid.
+[]
+I LIKE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PY!
+RAMID.
+* TOO FEW ARGUMENTS SUPPLIED - APPLY
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 15 do i like the box?
+[]
+DO I LIKE THE BOX?
+* 
+*  I DON'T KNOW.
+=== 16 do i like anything in the box?
+[]
+D
+READY/
+ O I LIKE ANYTHING IN THE BOX?
+* 
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 17 will you please stack up both of the red blocks and either a green cube or a pyramid?
+[]
+WILL YOU PLEASE STACK UP BOTH OF THE RED BLOCKS AND EITHER A GREEN CUBE OR A P!
+YRAMID?
+* 
+*  OK.
+=== 18 which cube is sitting on the table?
+[]
+W
+READY/
+ HICH CUBE IS SITTING ON THE TABLE?
+* 
+*  THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.
+=== 19 is there a large block behind a pyramid?
+[]
+I
+READY/
+ S THERE A LARGE BLOCK BEHIND A PYRAMID?
+* 
+*  YES, TWO OF THEM:  A LARGE RED ONE AND THE BLUE ONE.
+=== 20 put a small one onto the green cube which supports a pyramid.
+[]
+PUT 
+READY/
+ A SMALL ONE ONTO THE GREEN CUBE WHICH SUPPORTS A PYRAMID.
+* 
+*  OK.
+=== 21 put the littlest pyramid on top of it.
+[]
+PU
+READY/
+ T THE LITTLEST PYRAMID ON TOP OF IT.
+* 
+*  OK.
+=== 22 does the shortest thing the tallest pyramid's support supports support anything green?
+[]
+DO
+READY/
+ ES THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS SUPPORT ANYTHING !
+GREEN?
+* 
+*  YES,  THE GREEN PYRAMID.
+=== 23 what color is it?
+[respondeu 2, espaco, espaco, espaco, espaco, PARADO]
+WHAT 
+READY/
+ COLOR IS IT?
+*  I'M NOT SURE WHAT YOU MEAN BY "IT "  . DO YOU MEAN:
+1 -
+2 -
+3 - ?2 
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS  
+PLEASE TYPE ONE OF THE NUMBERS

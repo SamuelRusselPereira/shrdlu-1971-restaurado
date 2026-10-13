@@ -1,0 +1,107 @@
+Frase 37 da tese: "is there anything which is bigger than every pyramid but is not as wide as the thing that supports it?"
+Tese: YES, THE BLUE BLOCK.
+Rodada 14: CAR MADE ILGL MEM REF  I DON'T UNDERSTAND
+
+Os testes 2 a 6 partem do ponto de controle S36B (frases 1 a 36 com todos os ajustes da rodada 14).
+
+1) Primeira falha: SMRSQ nao aceita BUT (rastreio antigo, ponto S36).
+   SMCONJ guarda as duas oracoes ligadas por "but" como (BUT ...). A SMRSQ (z.semant, linha 1584) so
+   reconhece (AND ...) e trata o atomo BUT como uma interpretacao; o CAR desse atomo da o erro.
+   Fim do rastreio antigo (>NOME entra, <NOME sai):
+... >SMCL2 ... <SMCL2 >SMCONJ <SMCONJ >SMRSQ CAR MADE ILGL MEM REF *I DON'T UNDERSTAND
+   A versao seguinte aceita os dois: smspec.88 e smspec.89, linha 48: AND= (AND (OR (CQ BUT) (CQ AND)) ...).
+   Correcao (smrsq_corrigida.lisp): (EQ (CAR A) (QUOTE AND)) vira (MEMQ (CAR A) (QUOTE (AND BUT))). So isso muda.
+
+2) Com a SMRSQ aceitando BUT, o Micro-Planner para (rastreio com valores):
+(> SMRSQ (BUT (((NG125 (#ASMUCH #WIDTH NG125 NG131) NEG) (0) NIL)) (((NG125 (#MORE #SIZE NG125 NG126) NIL) (0) NIL))) (NG125))
+(< SMRSQ (NG133))
+(> ANS1 ((NG133 (#EXISTS NG133) NIL) (0) NIL))
+(> THVAL2 NIL (THPUTPROP2 X75 (THFIND ALL (THV X75) (X75) (THGOAL (#EXISTS (THV X75)) (THUSE TC-EXISTS)) (THNOT (THPUTPROP2 X77 (THFIND (1 2 NIL) (THV X77) (X77) (THGOAL (#SUPPORT (THV X77) (THV X75))) (THGOAL (#IS (THV X77) ?)) (THGOAL (#ASMUCH #WIDTH (THV X75) (THV X77)) (THUSE TC-ASMUCH))) BIND)) (THNOT (THPROG (X76) (THGOAL (#IS (THV X76) #PYRAMID)) (THNOT (THGOAL (#MORE #SIZE (THV X75) (THV X76)) (THUSE TC-MORE))) (THPUTPROP (QUOTE X76) (THV X76) (QUOTE BIND))))) BIND))
+X
+>>>  THUNASSIGNED - THV1
+LISTENING
+NIL 
+(GREATERP ((THV MEASURE) (THV X)) ((THV MEASURE) (THV Y)))
+>>>  LISPERROR - THVAL
+LISTENING
+NIL 
+(< THVAL2 NIL)
+(> ANSX (REL) NIL)
+(< ANSX (NO NIL NIL))
+
+   A busca e (THFIND ALL X75 ...). O unico objetivo fora de um THNOT e (#EXISTS X75), e o teorema
+   TC-EXISTS (z.blocks, linha 479) e (THCONSE (X) (#EXISTS $?X) (THSUCCEED)): ele aceita sem dar valor
+   a X75. Todo o resto esta dentro de THNOT, que nao deixa valor para fora. Assim nada gera os
+   candidatos, e a comparacao "bigger than" (TC-MORE) recebe X75 sem valor.
+
+3) Segunda falha: "anything" nao gera candidatos.
+   Na SMNG1 de 1971 (z.semant, linha 1262), um TPRON (anything, something...) recebe so a marca
+   #VAGUE e nenhum objetivo: (((X) 0) (0 #VAGUE) NIL). A palavra "thing", ao contrario, traz (#IS *** ?).
+   As versoes seguintes dao ao TPRON a relacao (#PHYSOB X) e as marcas (#VAGUE #PHYSOB #THING):
+     smspec.88 e smspec.89, linha 395: RELATIONS= (AND (CQ TPRON) (LIST (LIST '#PHYSOB OSSNODE=)))
+     smspec.97 (versao reescrita), linha 530: o mesmo, com !PHYSOB.
+   Correcao (smng1_corrigida.lisp): no TPRON, a lista de objetivos comeca com
+   (THGOAL (#PHYSOB (THV X)) (THUSE TC-PHYSOB)). O resto da SMNG1 fica igual.
+   Teste com essa correcao:
+(> THVAL2 NIL (THPUTPROP2 X75 (THFIND ALL (THV X75) (X75) (THGOAL (#EXISTS (THV X75)) (THUSE TC-EXISTS)) (THGOAL (#PHYSOB (THV X75)) (THUSE TC-PHYSOB)) (THNOT (THPUTPROP2 X77 (THFIND (1 2 NIL) (THV X77) (X77) (THGOAL (#SUPPORT (THV X77) (THV X75))) (THGOAL (#IS (THV X77) ?)) (THGOAL (#ASMUCH #WIDTH (THV X75) (THV X77)) (THUSE TC-ASMUCH))) BIND)) (THNOT (THPROG (X76) (THGOAL (#IS (THV X76) #PYRAMID)) (THNOT (THGOAL (#MORE #SIZE (THV X75) (THV X76)) (THUSE TC-MORE))) (THPUTPROP (QUOTE X76) (THV X76) (QUOTE BIND))))) BIND)) 
+(GREATERP ((THV MEASURE) (THV X)) ((THV MEASURE) (THV Y)))
+>>>  LISPERROR - THVAL
+LISTENING
+NIL 
+(< THVAL2 NIL)
+(> ANSX (REL) NIL)
+(< ANSX (NO NIL NIL))
+
+   Agora X75 recebe valor antes dos THNOT. O novo erro vem de um dos candidatos: TC-PHYSOB (z.blocks)
+   gera os blocos e depois :BOX, :TABLE e :HAND, e SIZE (z.blocks, linha 276) so conhece a caixa, a
+   mesa e os objetos da tabela ATABLE. Para :HAND, ATAB da erro.
+
+4) Terceira falha: SIZE nao conhece a mao.
+   A versao reescrita acrescenta exatamente esse caso (its, src/shrdlu/blockl.7, linha 294, em
+   minusculas, sinal de edicao feita depois):  ((eq x (quote :hand)) (quote (0 0 0)))
+   Correcao (size_corrigida.lisp): o mesmo caso, na SIZE de 1971.
+   Com as tres correcoes:
+(< THVAL2 (:TABLE :BOX :B6 :B10))
+(> ANSX (REL) (:TABLE :BOX :B6 :B10))
+(< ANSX (YES 4 (:TABLE :BOX :B6 :B10)))
+(< ANS1 (0 (YES 4 (:TABLE :BOX :B6 :B10)) (:TABLE :BOX :B6 :B10) ((NG133 (#EXISTS NG133) NIL) (0) NIL)))
+*  YES, FOUR OF THEM:  THE TABLE , THE BOX , A LARGE RED BLOCK AND THE
+  BLUE BLOCK. 
+
+   As frases 39 a 46, digitadas em seguida, saem iguais as da rodada 14.
+
+5) Por que quatro objetos, e nao so o bloco azul.
+   Tamanho (#SIZE = soma das tres medidas, data.5 e SIZE): piramides :B2 300, :B4 600, :B5 500.
+   :B6 (bloco vermelho grande) 800, :B10 (bloco azul) 700, :BOX 1100, :TABLE 3600: os quatro passam de 600.
+   Quem apoia cada um. Em S36B:
+(THVAL (QUOTE (THGOAL (#SUPPORT (THV X) :B6))) (QUOTE ((X THUNASSIGNED))))
+((#SUPPORT :TABLE :B6))
+(THVAL (QUOTE (THGOAL (#SUPPORT (THV X) :B10))) (QUOTE ((X THUNASSIGNED))))
+((#SUPPORT :BOX :B10))
+   A caixa nunca se move: (#SUPPORT :TABLE :BOX) vem de data.5. Nenhum fato diz que algo apoia a mesa.
+   Largura (#WIDTH = primeira medida): :B6 200 < 1200, :B10 200 < 400, :BOX 400 < 1200. Com os dados e as regras do programa, os quatro satisfazem a pergunta.
+   Nao achei no codigo nem na tese o que deixaria so o bloco azul.
+
+6) Um erro que nao muda a resposta: TC-ASMUCH ("as wide as") nunca casa.
+   O padrao usa a constante MEASURE onde o teorema gemeo TC-MORE usa a variavel:
+(CADDR (GET (QUOTE TC-ASMUCH) (QUOTE THEOREM)))
+(#ASMUCH MEASURE (THV X) (THV Y))
+(CADDR (GET (QUOTE TC-MORE) (QUOTE THEOREM)))
+(#MORE (THV MEASURE) (THV X) (THV Y))
+
+   Teste em S36B, antes de trocar MEASURE por (THV MEASURE):
+(THVAL (QUOTE (THGOAL (#ASMUCH #WIDTH :B10 :B1) (THUSE TC-ASMUCH))) NIL)
+NIL                                   <- falha, embora a largura de :B10 (200) passe a de :B1 (100)
+(THVAL (QUOTE (THGOAL (#ASMUCH MEASURE :B10 :B1) (THUSE TC-ASMUCH))) NIL)
+MEASURE
+>>>  THUNASSIGNED - THV1                <- so casa com a palavra MEASURE, e ai falta a medida
+   Depois da troca (asmuch_teste_37.lisp, so para teste):
+(THVAL (QUOTE (THGOAL (#ASMUCH #WIDTH :B10 :B1) (THUSE TC-ASMUCH))) NIL)
+(#ASMUCH #WIDTH :B10 :B1)
+(THVAL (QUOTE (THGOAL (#ASMUCH #WIDTH :B1 :B10) (THUSE TC-ASMUCH))) NIL)
+NIL
+(THVAL (QUOTE (THGOAL (#ASMUCH #WIDTH :B10 :BOX) (THUSE TC-ASMUCH))) NIL)
+NIL
+   Com a troca, a resposta da frase 37 continua a mesma (quatro objetos), porque
+   nenhum dos quatro e tao largo quanto quem o apoia. O erro esta tambem em blocks.141, blocks.142 e
+   na versao reescrita (blockp.7), entao a troca NAO entrou nas rodadas.

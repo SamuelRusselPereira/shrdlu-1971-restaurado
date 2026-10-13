@@ -1,0 +1,49 @@
+# Winograd, AI-TR-235 (fev. 1971), secao 1.3 "Sample Dialog", pp. 35-60.
+# n<TAB>pagina<TAB>humano (minusculas, como na tese)<TAB>resposta do SHRDLU (maiusculas, como na tese)
+# Nao existe o item 38 na numeracao da tese. No item 24 o usuario responde "2" a pergunta de esclarecimento.
+1	35	pick up a big red block.	OK.
+2	35	grasp the pyramid.	I DON'T UNDERSTAND WHICH PYRAMID YOU MEAN.
+3	35/39	find a block which is taller than the one you are holding and put it into the box.	BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING. OK.
+4	39	what does the box contain?	THE BLUE PYRAMID AND THE BLUE BLOCK.
+5	39	what is the pyramid supported by?	THE BOX.
+6	39	how many blocks are not in the box?	FOUR OF THEM.
+7	39	is at least one of them narrower than the one which i told you to pick up?	YES, THE RED CUBE.
+8	39/41	is it supported?	YES, BY THE TABLE.
+9	41	can the table pick up blocks?	NO.
+10	41	can a pyramid be supported by a block?	YES.
+11	41	can a pyramid support a pyramid?	I DON'T KNOW.
+12	41	stack up two pyramids.	I CAN'T.
+13	41	the blue pyramid is nice.	I UNDERSTAND.
+14	41	i like blocks which are not red, but i don't like anything which supports a pyramid.	I UNDERSTAND.
+15	41	do i like the box?	NO.
+16	42	do i like anything in the box?	YES, TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
+17	42	will you please stack up both of the red blocks and either a green cube or a pyramid?	OK.
+18	42	which cube is sitting on the table?	THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.
+19	42	is there a large block behind a pyramid?	YES, THREE OF THEM: A LARGE RED ONE, A LARGE GREEN CUBE AND THE BLUE ONE.
+20	42	put a small one onto the green cube which supports a pyramid.	OK.
+21	42/48	put the littlest pyramid on top of it.	OK.
+22	48	does the shortest thing the tallest pyramid's support supports support anything green?	YES, THE GREEN PYRAMID.
+23	48	what color is it?	BY "IT", I ASSUME YOU MEAN THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS. RED
+24	48/50	how many things are on top of green cubes?	I'M NOT SURE WHAT YOU MEAN BY "ON TOP OF" IN THE PHRASE "ON TOP OF GREEN CUBES". DO YOU MEAN: 1 - DIRECTLY ON THE SURFACE 2 - ANWHERE ON TOP OF ? [2] THREE OF THEM.
+25	50	had you touched any pyramid before you put the green one on the little cube?	YES, THE GREEN ONE.
+26	50	when did you pick it up?	WHILE I WAS STACKING UP THE RED CUBE, A LARGE RED BLOCK AND A LARGE GREEN CUBE.
+27	50	why?	TO GET RID OF IT.
+28	50	why did you do that?	TO CLEAN OFF THE RED CUBE.
+29	50	why did you clear off that cube?	TO PUT IT ON A LARGE GREEN CUBE.
+30	51	why did you do that?	TO STACK UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.
+31	51	why did you do that?	BECAUSE YOU ASKED ME TO.
+32	51	how did you do it?	BY PUTTING A LARGE RED BLOCK ON THE TABLE ; THEN LETTING GO OF IT ; THEN PUTTING A LARGE GREEN CUBE ON IT ; THEN LETTING GO OF THAT CUBE ; THEN PUTTING THE RED CUBE ON THAT CUBE ; THEN LETTING GO OF THAT CUBE.
+33	51	how many objects did you touch while you were doing it?	FOUR OF THEM.
+34	51	what did the red cube support before you started to clean it off?	THE GREEN PYRAMID.
+35	51	there were five blocks to the left of the box then.	NO, ONLY FOUR OF THEM: THE RED CUBE , TWO LARGE GREEN CUBES AND A LARGE RED BLOCK.
+36	52	put the blue pyramid on the block in the box.	OK.
+37	52	is there anything which is bigger than every pyramid but is not as wide as the thing that supports it?	YES, THE BLUE BLOCK.
+39	52	does a steeple	SORRY, I DON'T KNOW THE WORD "STEEPLE". PLEASE TYPE TWO SPACES.
+40	52/55	a "steeple" is a stack which contains two green cubes and a pyramid.	I UNDERSTAND.
+41	55	are there any steeples now?	NO.
+42	55	build one.	OK.
+43	55	call the biggest block "superblock".	OK.
+44	55	have you picked up superblock since we began?	YES.
+45	55	why did you drop it?	BY "IT", I ASSUME YOU MEAN THE SUPERBLOCK. I CAN'T EXPLAIN A NON-EXISTENT EVENT.
+46	55	is there anything to the right of the red pyramid?	YES, FOUR THINGS: THE BOX , THE RED CUBE, THE BLUE PYRAMID AND THE BLOCK NAMED SUPERBLOCK
+47	60	thank you.	YOU'RE WELCOME!

@@ -1,0 +1,145 @@
+Frase 23 da tese: "what color is it?"
+Tese: BY "IT", I ASSUME YOU MEAN THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS.  RED
+Rodada 12: I'M NOT SURE WHAT YOU MEAN BY "IT " . DO YOU MEAN: 1 - 2 - 3 - ?   (opcoes vazias)
+
+Todos os testes abaixo partem do ponto de controle S22 (estado logo depois da frase 22,
+"does the shortest thing the tallest pyramid's support supports support anything green?",
+resposta "YES, THE GREEN PYRAMID.").
+
+0) O que a tese diz que deve acontecer.
+   Comentario da tese depois do item 23 (AI-TR-235, secao 1.3; texto do OCR do DTIC, AD0721399):
+     "If we had asked "what size is it?", the system would have assumed that "it" meant the
+      green pyramid, but nobody would ask the color of something which was just called
+      "the green pyramid", so it had to look farther for the reference of "it"."
+   Secao 1.1.2, p. 27: "we would not ask a question which we had answered ourselves in the
+   previous sentence" (exemplo: "is there a green block on a table? what color is it?").
+   O codigo que faz isso esta em ANS1 (z.answer, linhas 175-185): quando ha mais de uma
+   interpretacao, ele refaz a busca so com os fatos ja mencionados (THTRUE vira WHO).
+   Se a resposta sai igual usando so os fatos marcados na frase anterior (WHO entre
+   LASTSENTNO-2 e LASTSENTNO, sem incluir as pontas), a interpretacao perde 500;
+   se sai igual usando tudo o que ja foi mencionado ("HE"), perde 200.
+
+1) Estado em S22.
+(LIST TIMID IASSUME DISCOURSE LASTREL LASTSENTNO (GET (QUOTE IT) (QUOTE LASTT)) (GET (QUOTE IT) (QUOTE BIND)) ...)
+(200 T T NG72 26 NIL NIL NIL)
+(MAPCAR (FUNCTION (LAMBDA (X) (LIST (CAR X) (CADDDR X) (FROM (CADR X) (CADDR X))))) BACKREF2)
+((X51 NG66 (THE TALLEST PYRAMID"S SUPPORT)) (X47 NG64 (THE TALLEST PYRAMID"S)) (X46 NG71 (THE SHORTEST THING THE TALLEST PYRAMID"S SUPPORT SUPPORTS)) (X55 NG72 (ANYTHING GREEN)))
+   LASTREL (o foco da frase 22) e NG72, "anything green" = a piramide verde :B2.
+
+2) Rastreio da frase 23 sem correcao (argumentos e valores; palavras do dicionario abreviadas).
+(> SMIT IT)
+(> SMIT3)
+(< SMIT3 (X46 [...palavras...] NG71))          <- sujeito da frase 22
+(> SMIT4 (X46 [...palavras...] NG71) 300)
+(> ITIFY IT 300 NG71)
+(> SMIT3)
+(< SMIT3 (X51 [...palavras...] NG66))          <- devia ser X55 ("anything green")
+(> SMIT4 (X51 [...palavras...] NG66) 100)
+(> ITIFY IT 100 NG66)
+(> ITIFY IT 200 NG72)                          <- LASTREL, pelo trecho ON da SMIT
+(< SMIT (NG71 NG66 NG72))
+   ANS1 para cada candidato:
+   NG71 (:B1): (THVAL2 NIL ...) -> (#RED)    (THVAL2 (24 27) ...) -> NIL   (THVAL2 HE ...) -> NIL   => 300
+   NG72 (:B2): (THVAL2 NIL ...) -> (#GREEN)  (THVAL2 (24 27) ...) -> NIL   (THVAL2 HE ...) -> NIL   => 200
+   NG66 (:B3): (THVAL2 NIL ...) -> (#GREEN)  (THVAL2 (24 27) ...) -> NIL   (THVAL2 HE ...) -> NIL   => 100
+   A expressao avaliada:
+   (THFIND ALL (THV X56) (X56) (THGOAL (#COLOR :B2 (THV X56))) (THGOAL (#IS (THV X56) #COLOR)))
+(< WIN T)  I'M NOT SURE WHAT YOU MEAN BY "IT "  . DO YOU MEAN:
+1 -
+2 -
+3 - ?1
+   YELL pergunta porque 300 nao passa de TIMID (200) + 200.
+   As opcoes saem vazias porque YELL imprime a propriedade AMBIG de cada candidato, e no
+   codigo de 1971 ninguem grava essa propriedade para pronomes (ITIFY nao grava). A versao
+   seguinte (smspec.89, linha 297, do its-vault) passa a guardar as palavras de cada candidato
+   (AMBIGUITIES= ... (FROM (NB NODE) (N NODE))).
+
+3) Primeira falha: SMIT3 devolve o sintagma errado.
+   z.semant, linha 1203:
+   (DEFUN SMIT3 NIL (FASSOC (FUNCTION (LAMBDA (X) (AND (EQ (CADR X) (NB PT)) (CADDR X)))) (N PT) BACKREF2))
+   FASSOC (z.syscom, linha 242) devolve o primeiro elemento S da lista com (EQ chave (W S)).
+   A chave e (N PT), o fim do sintagma. "anything green" fecha a frase 22, entao (N PT) e NIL.
+   Para qualquer entrada com outro comeco, a funcao W devolve NIL, que e igual a chave.
+   Prova, com PT no sintagma "anything green":
+(LIST (CAAR PT) (FROM (NB PT) (N PT)) (N PT))
+((NG OBJ OBJ1 TPRON NS) (ANYTHING GREEN) NIL)
+(CAR (SMIT3))
+X51
+(MAPCAR (FUNCTION (LAMBDA (X) (LIST (CAR X) (EQ (CADR X) (NB PT)) (EQ (CADDR X) (N PT))))) BACKREF2)
+((X51 NIL NIL) (X47 NIL NIL) (X46 NIL NIL) (X55 T T))
+   So X55 tem o mesmo comeco e o mesmo fim. A SMIT3 devolveu X51, a primeira da lista.
+   Correcao (smit3_corrigida.lisp): comparar o comeco e o fim, com chave T; quando nada
+   casa, devolver NIL, como as outras chamadas de FASSOC fazem com (FUNCTION NILL):
+   (DEFUN SMIT3 NIL (FASSOC (FUNCTION (LAMBDA (X) (AND (EQ (CADR X) (NB PT)) (EQ (CADDR X) (N PT))))) T BACKREF2 (FUNCTION NILL)))
+   Com ela: (CAR (SMIT3)) -> X55.
+
+4) Segunda falha: o teste "ele ja sabia?" nunca da certo em perguntas de cor.
+   Marcas WHO (numero da frase em que o fato foi mencionado), em S22:
+(THVAL (QUOTE (THGOAL (#COLOR :B2 #GREEN))) NIL)
+((#COLOR :B2 #GREEN) WHO 25)
+(THVAL (QUOTE (THGOAL (#COLOR :B1 #RED))) NIL)
+((#COLOR :B1 #RED) WHO 20)
+(THVAL (QUOTE (THGOAL (#COLOR :B3 #GREEN))) NIL)
+((#COLOR :B3 #GREEN) WHO 23)
+(THVAL (QUOTE (THGOAL (#IS #GREEN #COLOR))) NIL)
+((#IS #GREEN #COLOR))
+   O fato (#IS #GREEN #COLOR) ("verde e uma cor") vem do arquivo de dados (data.5, linha 54)
+   e nunca recebe marca WHO. O filtro WHO (z.semant, linha 782) recusa todo fato sem marca.
+   A palavra "color" sempre pede esse fato (z.dictio, linha 416: (#IS *** #COLOR)).
+   Prova, com THTRUE trocado por WHO como ANS1 faz:
+(THVAL2 (LIST 24 27) (QUOTE (THFIND ALL (THV X) (X) (THGOAL (#COLOR :B2 (THV X))))))
+(#GREEN)
+(THVAL2 (LIST 24 27) (QUOTE (THFIND ALL (THV X) (X) (THGOAL (#COLOR :B2 (THV X))) (THGOAL (#IS (THV X) #COLOR)))))
+NIL
+(THVAL2 (QUOTE HE) (QUOTE (THFIND ALL (THV X) (X) (THGOAL (#COLOR :B1 (THV X))))))
+(#RED)
+(THVAL2 (QUOTE HE) (QUOTE (THFIND ALL (THV X) (X) (THGOAL (#COLOR :B1 (THV X))) (THGOAL (#IS (THV X) #COLOR)))))
+NIL
+   Correcao (who_corrigida.lisp): deixar passar, sem marca WHO, os fatos que dizem quais
+   palavras sao cores ou formas ((#IS x #COLOR) e (#IS x #SHAPE)). No arquivo de dados sao
+   oito fatos (cinco cores e tres formas). O resto da funcao fica igual:
+   (DEFUN WHO (X) (COND ((NULL WHO)) ((ATOM X)) ((AND (NULL (GET X (QUOTE WHO))) (EQ (CAAR X) (QUOTE #IS)) (MEMQ (CADDAR X) (QUOTE (#COLOR #SHAPE))))) ((NOT (SETQ X (GET X (QUOTE WHO)))) NIL) ((EQ WHO (QUOTE HE))) ((LESSP (CAR WHO) X LASTSENTNO))))
+
+5) Testes a partir de S22 (o roteiro responde "1" se vier a pergunta).
+   So a SMIT3 corrigida: dois candidatos empatados em 300, nenhum desconto.
+ WHAT COLOR IS IT?
+*  I'M NOT SURE WHAT YOU MEAN BY "IT "  . DO YOU MEAN:
+1 -
+2 - ?1
+*  WHAT COLOR IS IT?
+*
+*  GREEN
+   So a WHO corrigida: 300-200=100, 200-500=-300, 100-200=-100. A diferenca fica em 200,
+   que nao passa de TIMID.
+ WHAT COLOR IS IT?
+*  I'M NOT SURE WHAT YOU MEAN BY "IT "  . DO YOU MEAN:
+1 -
+2 -
+3 - ?
+1
+*  WHAT COLOR IS IT?
+*
+*  GREEN
+   As duas juntas:
+(< SMIT3 (X55 [...palavras...] NG72))
+(> SMIT4 (X55 [...palavras...] NG72) 100)
+(> ITIFY IT 300 NG72)                          <- 100 + 200 por ser o LASTREL
+(< SMIT (NG71 NG72))
+(> THVAL2 (24 27) (THPUTPROP2 X56 (THFIND ALL (THV X56) (X56) (THGOAL (#COLOR :B2 (THV X56))) (THGOAL (#IS (THV X56) #COLOR))) BIND))
+(< THVAL2 (#GREEN))
+(< ANS1 (-200 (NIL NIL (#GREEN)) (#GREEN) ...))     <- 300 - 500: acabou de ser chamada de verde
+(> THVAL2 HE (THPUTPROP2 X56 (THFIND ALL (THV X56) (X56) (THGOAL (#COLOR :B1 (THV X56))) (THGOAL (#IS (THV X56) #COLOR))) BIND))
+(< THVAL2 (#RED))
+(< ANS1 (100 (NIL NIL (#RED)) (#RED) ...))          <- 300 - 200: a cor ja tinha sido mencionada (WHO 20)
+(< WIN T)
+(> IASS IT)
+BY "IT", I ASSUME YOU MEAN THE SHORTEST THING THE TALLEST PYRAMID"S
+  SUPPORT SUPPORTS.
+
+*  RED
+   100 passa de TIMID (200) + (-200). O programa escolhe o sujeito da frase 22, avisa a
+   escolha e responde RED, como na tese.
+
+6) Observacao sobre PYRAMID"S. O programa troca o apostrofo de dentro de uma palavra por aspas
+   ao ler a frase (z.syscom, linha 93, na ETAOIN) e imprime a palavra assim. A tese e o
+   roteiro demo.flick escrevem PYRAMID'S.

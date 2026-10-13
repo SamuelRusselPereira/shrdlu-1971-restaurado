@@ -1,0 +1,159 @@
+=== 2 grasp the pyramid.
+G
+READY/
+ RASP THE PYRAMID.
+*
+(THPUTPROP2 X2
+(THFIND ALL (THV X2) (X2) (THGOAL (#IS (THV X2) #PYRAMID)))
+            BIND)
+(THPUTPROP2 X2
+(THFIND ALL
+(THV X2)
+(X2)
+(THAMONG (THV X2) (QUOTE (:B2 :B4 :B5)))
+                    (THGOAL (#IS (THV X2) #PYRAMID)))
+            BIND)
+*  I DON'T KNOW WHICH PYRAMID YOU MEAN.
+=== 3 find a block which is taller than the one you are holding and put it into the box.
+FIND 
+READY/
+ A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX.
+* 
+VALUE UNBOUND VARIABLE - EVAL
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 4 what does the box contain?
+WHAT DOES THE BOX CONTAIN?
+*
+(THPUTPROP2 X5
+(THFIND ALL (THV X5) (X5) (THGOAL (#IS (THV X5) #BOX)))
+            BIND)
+(THPUTPROP2 UNKNOWN
+(THFIND ALL
+(THV UNKNOWN)
+(UNKNOWN)
+(THGOAL (#CONTAIN :BOX (THV UNKNOWN))))
+            BIND)
+*  THE BLUE PYRAMID.
+=== 5 what is the pyramid supported by?
+WHA
+READY/
+ T IS THE PYRAMID SUPPORTED BY?
+*
+(THPUTPROP2 X6
+(THFIND ALL (THV X6) (X6) (THGOAL (#IS (THV X6) #PYRAMID)))
+            BIND)
+(THPUTPROP2 X6
+(THFIND ALL
+(THV X6)
+(X6)
+(THAMONG (THV X6) (QUOTE (:B2 :B4 :B5)))
+                    (THGOAL (#IS (THV X6) #PYRAMID)))
+            BIND)
+FINDQ UNDEFINED FUNCTION - EVAL
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 6 how many blocks are not in the box?
+HOW MANY BLOCKS ARE NOT IN THE BOX?
+*
+(THPUTPROP2 X10
+(THFIND ALL (THV X10) (X10) (THGOAL (#IS (THV X10) #BOX)))
+            BIND)
+(THPUTPROP2 X7
+(THFIND ALL
+(THV X7)
+(X7)
+(THGOAL (#IS (THV X7) #BLOCK))
+                    (THNOT (THGOAL (#CONTAIN :BOX (THV X7)))))
+            BIND)
+* FIVE OF THEM.
+=== 7 is at least one of them narrower than the one which i told you to pick up?
+IS A
+READY/
+ T LEAST ONE OF THEM NARROWER THAN THE ONE WHICH I TOLD YOU TO PICK UP?
+* 
+(THPUTPROP2 X11
+(THFIND ALL
+(THV X11)
+(EVX1 X11)
+(THGOAL (#IS (THV X11) #BLOCK))
+                    (THGOAL (#PICKUP (THV EVX1)
+(THV X11)
+(#TIME (PAST) NIL NIL NIL))
+                            (THUSE TCTE-PICKUP))
+                    (THGOAL (#WANT :FRIEND
+(THV EVX1)
+(#TIME (PAST) NIL NIL NIL))
+                            (THUSE TC-WANT4))
+                    (THPUTPROP (QUOTE EVX1) (THV EVX1) (QUOTE BIND)))
+            BIND)
+(WHICH THE ONE WHICH I TOLD YOU TO PICK UP)
+READY/
+ 
+=== 8 is it supported?
+IS IT SUPPORTED?
+*
+*  NO.
+=== 9 can the table pick up blocks?
+CAN
+READY/
+  THE TABLE PICK UP BLOCKS?
+*
+(THPUTPROP2 X12
+(THFIND ALL (THV X12) (X12) (THGOAL (#IS (THV X12) #TABLE)))
+            BIND)
+*  NO.
+=== 10 can a pyramid be supported by a block?
+CA
+READY/
+ N A PYRAMID BE SUPPORTED BY A BLOCK?
+* 
+(THPUTPROP2 X14
+(THFIND ALL
+(THV X14)
+(X15 X14)
+(THGOAL (#IS (THV X14) #PYRAMID))
+                    (THGOAL (#SUPPORT (THV X15) (THV X14)))
+                    (THGOAL (#IS (THV X15) #BLOCK))
+                    (THPUTPROP (QUOTE X15) (THV X15) (QUOTE BIND)))
+            BIND)
+*  YES.
+=== 11 can a pyramid support a pyramid?
+CAN
+READY/
+  A PYRAMID SUPPORT A PYRAMID?
+* 
+(THPUTPROP2 X16
+(THFIND ALL
+(THV X16)
+(X17 X16)
+(THGOAL (#IS (THV X16) #PYRAMID))
+                    (THGOAL (#SUPPORT (THV X16) (THV X17)))
+                    (THGOAL (#IS (THV X17) #PYRAMID))
+                    (THPUTPROP (QUOTE X17) (THV X17) (QUOTE BIND)))
+            BIND)
+*  I DON'T KNOW.
+=== 12 stack up two pyramids.
+S
+READY/
+ TACK UP TWO PYRAMIDS.
+*
+(THGOAL (#STACKUP NG23) (THUSE TC-2))
+*  I CAN'T.
+=== 13 the blue pyramid is nice.
+THE
+READY/
+  BLUE PYRAMID IS NICE.
+*
+(THPUTPROP2 X21
+(THFIND ALL
+(THV X21)
+(X21)
+(THGOAL (#COLOR (THV X21) #BLUE))
+                    (THGOAL (#IS (THV X21) #PYRAMID)))
+            BIND)FIRST ARG NONATOMIC - PUTPROP
+*I DON'T UNDERSTAND
+READY/
+ 

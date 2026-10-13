@@ -1,0 +1,13 @@
+--- oraculo CL (port UMR) antes
++++ oraculo CL corrigido
+@@ -753,8 +753,8 @@
+ 
+ (DEFUN SMPOSS2 (HEADNODE MODNODE) 
+        (PROG (X SM SMSUB SMOB1 SMOB2 SMOBL SMCOMP RELLIST) 
+-	     (SETQ SMRUB (SM MODNODE))
+-	     (SETQ RELLIST (RETQ AMOB1 (SM HEADNODE)))
++	     (SETQ SMSUB (SM MODNODE))
++	     (SETQ RELLIST (SETQ SMOB1 (SM HEADNODE)))
+ 	     (SMSET '(\#HAVE))
+ 	     (RETURN (AND SM
+ 			  (SETQ X (MAKESYM 'NODE))

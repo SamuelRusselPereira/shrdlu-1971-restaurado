@@ -1,0 +1,73 @@
+Comparacao: definicoes de topo dos arquivos Z (fonte original) x definicoes achadas no moby dump
+Metodo: cada definicao do fonte foi lida e reimpressa no mesmo formato da imagem; comparacao de texto exata.
+
+Total: 292  |  identicas: 234  |  diferentes: 4  |  sem texto interpretado na imagem (compiladas ou guardadas de outra forma): 54
+
+z.answer  identicas  19  diferentes  1  compiladas  0
+z.blocks  identicas  85  diferentes  1  compiladas  9
+z.break   identicas   5  diferentes  0  compiladas  1
+z.dictio  identicas  21  diferentes  0  compiladas  2
+z.semant  identicas 101  diferentes  1  compiladas  4
+z.syscom  identicas   3  diferentes  1  compiladas 38
+
+Diferencas:
+- z.answer IASS (EXPR): so o caractere de fim de linha dentro de um simbolo (CR x LF): igual
+- z.blocks TCT-PICKUP (THEOREM): o fonte tem "#PICKUP$?EV" sem espaco (o mesmo erro aparece impresso na tese, Apendice C); o MacLisp le igual
+- z.semant SMNGOF (EXPR): DIFERENCA REAL: o fonte envolve a variavel em (LIST (QUOTE THV) ...); a imagem nao
+- z.syscom ERT (FEXPR): a imagem redefine ERT para chamar THERT (ambiente de demonstracao), nao e a logica do programa
+
+Sem texto interpretado na imagem (compiladas ou guardadas de outra forma; o fonte esta nos arquivos Z):
+  z.blocks TC-PART
+  z.blocks #CLEARTOP
+  z.blocks #GRASP
+  z.blocks #PICKUP
+  z.blocks #PUTIN
+  z.blocks #PUTIN
+  z.blocks #PUTON
+  z.blocks #PUTON
+  z.blocks #STACKUP
+  z.break WBREAK
+  z.dictio BE
+  z.dictio #LIKE
+  z.semant FEXPR
+  z.semant FEXPR
+  z.semant FEXPR
+  z.semant #SUBST
+  z.syscom CUT
+  z.syscom PDEFINE
+  z.syscom DEFLIST
+  z.syscom DISP
+  z.syscom ERTSTOP
+  z.syscom ETAOIN
+  z.syscom ETNEW
+  z.syscom F
+  z.syscom FASSOC
+  z.syscom FINDB
+  z.syscom FQ
+  z.syscom FROM
+  z.syscom ISX
+  z.syscom ISQ
+  z.syscom M
+  z.syscom MEET
+  z.syscom MOD
+  z.syscom MP
+  z.syscom MQ
+  z.syscom NEXTW
+  z.syscom NILL
+  z.syscom NQ
+  z.syscom P
+  z.syscom PARSE
+  z.syscom PARSEREL
+  z.syscom PARSE2
+  z.syscom PARSE3
+  z.syscom POP
+  z.syscom POPTO
+  z.syscom PRC
+  z.syscom PRINT2
+  z.syscom PRINT3
+  z.syscom PR1
+  z.syscom PR2
+  z.syscom PT
+  z.syscom PTFIND
+  z.syscom PTRS
+  z.syscom PTSV

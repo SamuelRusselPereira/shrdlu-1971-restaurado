@@ -1,0 +1,181 @@
+=== sessao nova: (SETQ NOSTOP T) (SETQ NOMEM NIL) (SETQ PLANNERSEE NIL) (SETQ VALUE NIL) (SHRDLU)
+=== frases 1-3 digitadas a mao (na 3 foi preciso um espaco para destravar)
+(SETQ VALUE NIL)
+NIL
+(SHRDLU)
+READY/
+ PICK UP A BIG RED BLOCK.
+* 
+*  OK.GR
+READY/
+ ASP THE PYRAMID.
+*
+*  I DON'T KNOW WHICH PYRAMID YOU MEAN.FIND 
+READY/
+ A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX.
+* 
+*   OK.
+BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM
+  HOLDING.
+
+*  OK.
+READY/
+ 
+=== 4 what does the box contain?
+[]
+WHAT DOES THE BOX CONTAIN?
+* 
+*  THE BLUE PYRAMID AND THE BLUE BLOCK.
+=== 5 what is the pyramid supported by?
+[]
+WHAT
+READY/
+  IS THE PYRAMID SUPPORTED BY?
+* 
+FINDQ UNDEFINED FUNCTION - EVAL
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 6 how many blocks are not in the box?
+[]
+HOW MANY BLOCKS ARE NOT IN THE BOX?
+* 
+* FOUR OF THEM.
+=== 7 is at least one of them narrower than the one which i told you to pick up?
+[parada do planner: NIL]
+I
+READY/
+ S AT LEAST ONE OF THEM NARROWER THAN THE ONE WHICH I TOLD YOU TO PICK UP?
+* 
+NIL
+>>>  THUNBOUND THGAL
+LISTENING
+NIL 
+BY "THEM", I ASSUME YOU MEAN THE HOW MANY BLOCKS AM NOT IN THE BOX.
+
+*  NO, ONLY, NONE OF THEM.
+=== 8 is it supported?
+[]
+IS I
+READY/
+ T SUPPORTED?
+*
+BY "IT", I ASSUME YOU MEAN THE AT LEAST ONE OF THEM NARROWER THAN THE
+  ONE WHICH YOU TOLD I TO PICK UP.
+
+*  NO.
+=== 9 can the table pick up blocks?
+[]
+CAN T
+READY/
+ HE TABLE PICK UP BLOCKS?
+*
+*  NO.
+=== 10 can a pyramid be supported by a block?
+[]
+CAN
+READY/
+  A PYRAMID BE SUPPORTED BY A BLOCK?
+* 
+*  I DON'T KNOW.
+=== 11 can a pyramid support a pyramid?
+[]
+CAN 
+READY/
+ A PYRAMID SUPPORT A PYRAMID?
+* 
+*  I DON'T KNOW.
+=== 12 stack up two pyramids.
+[]
+STACK
+READY/
+  UP TWO PYRAMIDS.
+*
+*  I CAN'T.
+=== 13 the blue pyramid is nice.
+[]
+THE 
+READY/
+ BLUE PYRAMID IS NICE.
+*
+*  I DON'T KNOW WHICH BLUE PYRAMID YOU MEAN.
+=== 14 i like blocks which are not red, but i don't like anything which supports a pyramid.
+[]
+I LI
+READY/
+ KE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PYRAMI!
+D.
+* TOO FEW ARGUMENTS SUPPLIED - APPLY
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 15 do i like the box?
+[]
+DO I LIKE THE BOX?
+*
+(WHICH THE BOX)
+READY/
+ 
+=== 16 do i like anything in the box?
+[parada do planner: NIL]
+DO I LIKE ANYTHING IN THE BOX?
+* IN
+>>>  UNDEFINED
+LISTENING NIL 
+SMPLACE UNDEFINED FUNCTION, CALLED FROM LOC 255362
+PROGRAM TRAPPED WHILE IN CLAUSE
+(WHICH THE BOX)
+READY/
+ 
+=== 17 will you please stack up both of the red blocks and either a green cube or a pyramid?
+[]
+WILL YOU PLEASE STACK UP BOTH OF THE RED BLOCKS AND EITHER A GREEN CUBE OR A P!
+YRAMID?
+* 
+(WHICH THE RED BLOCKS)
+READY/
+ 
+=== 18 which cube is sitting on the table?
+[]
+WHICH CUBE IS SITTING ON THE TABLE?
+*
+(WHICH THE TABLE)
+READY/
+ 
+=== 19 is there a large block behind a pyramid?
+[]
+IS THERE A LARGE BLOCK BEHIND A PYRAMID?
+* 
+*  NO.
+=== 20 put a small one onto the green cube which supports a pyramid.
+[]
+PUT 
+READY/
+ A SMALL ONE ONTO THE GREEN CUBE WHICH SUPPORTS A PYRAMID.
+* CAR MADE ILGL MEM REF
+*I DON'T UNDERSTAND
+READY/
+ 
+=== 21 put the littlest pyramid on top of it.
+[]
+PUT THE LITTLEST PYRAMID ON TOP OF IT.
+*
+*  I DON'T KNOW WHICH LITTLEST PYRAMID YOU MEAN.
+=== 22 does the shortest thing the tallest pyramid's support supports support anything green?
+[]
+DOES 
+READY/
+ THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS SUPPORT ANYTHING GRE!
+EN?
+*
+(WHICH THE TALLEST PYRAMID"S)
+READY/
+ 
+=== 23 what color is it?
+[]
+WHAT COLOR IS IT?
+* 
+BY "IT", I ASSUME YOU MEAN
+*I DON'T UNDERSTAND
+READY/
+ 

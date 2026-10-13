@@ -1,0 +1,31 @@
+=== a partir de S12 com SMADJ v3 + MODAL + GOALIZE2 (negacao por ultimo)
+=== 13 the blue pyramid is nice.
+[]
+THE BLUE PYRAMID IS NICE.
+* 
+*  I UNDERSTAND.
+=== 14 i like blocks which are not red, but i don't like anything which supports a pyramid.
+[]
+I L
+READY/
+ IKE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PYRAM!
+ID.
+* 
+*  I UNDERSTAND.
+*  I UNDERSTAND.
+=== 15 do i like the box?
+[]
+DO I 
+READY/
+ LIKE THE BOX?
+* 
+*  NO.
+=== 16 do i like anything in the box?
+[]
+D
+READY/
+ O I LIKE ANYTHING IN THE BOX?
+* 
+*  YES, TWO OF THEM:  THE BLUE BLOCK AND THE BLUE PYRAMID
+READY/
+ 

@@ -1,0 +1,12 @@
+#!/bin/bash
+# Liga o ITS no emulador (tmux), entra, e carrega o moby dump com as chaves do dialogo.
+T=/home/claude/work/its_tape; I=$T/its.sh
+wait_for() { for k in $(seq 1 ${2:-60}); do tail -c +$((M+1)) $T/console.log | tr '\r' '\n' | grep -q "$1" && return 0; sleep 1; done; echo "TIMEOUT esperando: $1"; return 1; }
+M=$(stat -c %s $T/console.log); $I start; wait_for "DSKDMP" 90; sleep 3
+DELAY=0.4 $I send "its"; sleep 1; $I cr; sleep 4
+DELAY=0.3 $I send "styo+2/popj p,"; sleep 1; $I cr; sleep 2; $I esc; sleep 1; $I send "g"
+wait_for "IN OPERATION" 90; sleep 3; $I ctrl z; wait_for "Happy hacking" 30
+$I send ":login samuel"; $I cr; sleep 3
+$I send ":job moby"; $I cr; sleep 2; $I send ":load oshrdl;moby dump"; $I cr; sleep 5; $I esc; $I send "g"; sleep 4
+for f in "(SETQ NOSTOP T)" "(SETQ NOMEM NIL)" "(SETQ VALUE NIL)" "(SETQ PLANNERSEE ${PLANNERSEE:-NIL})"; do $I send "$f"; sleep 2; done
+echo BOOT-OK

@@ -1,0 +1,37 @@
+=== a partir de S28 com os dois remendos (PRONREL -> REL)
+=== 29 why did you clear off that cube?
+[]
+WHY DID YOU CLEAR OFF THAT CUBE?
+*
+*  TO PUT IT ON A LARGE GREEN CUBE.
+=== 30 why did you do that?
+[]
+WHY 
+READY/
+ DID YOU DO THAT?
+*
+*  TO STACK UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.
+=== 31 why did you do that?
+[]
+WHY 
+READY/
+ DID YOU DO THAT?
+*
+*  BECAUSE YOU ASKED ME TO.
+=== 32 how did you do it?
+[espaco]
+HOW 
+READY/
+ DID YOU DO IT?
+*
+*  BY PUTTING A LARGE RED BLOCK ON THE TABLE ; THEN LETTING GO OF IT ;
+  THEN PUTTING A LARGE GREEN CUBE ON IT ; THEN LETTING GO OF THAT CUBE
+  ; THEN PUTTING THE RED CUBE ON THAT CUBE ; THEN LETTING GO OF THAT
+  CUBE. 
+READY/
+ 
+=== 33 how many objects did you touch while you were doing it?
+[]
+HOW MANY OBJECTS DID YOU TOUCH WHILE YOU WERE DOING IT?
+* 
+* FOUR OF THEM.
