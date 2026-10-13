@@ -27,3 +27,24 @@ Observacoes:
 - Sobre o fonte do TWDEMO, Swenson disse em ago/2024 que tinha fontes da demo (sem ter tentado compilar) e em dez/2025 que nao ha fonte do TWDEMO. Nenhum fonte do TWDEMO foi publicado. O que existe e o roteiro (demo.flick) e o binario (ts.twdemo).
 - Quando Swenson diz que "the original SHRDLU has been recovered", fala dos fontes de 1973-74 das fitas ToTS (pasta 01 deste repositorio), nao da versao da epoca da tese.
 - O relato de Winograd (via Swenson) de uma reescrita completa por Stu Card em 1971 ou 1972 e coerente com o que este repositorio mostra: uma versao anterior a reescrita (arquivos Z, moby dump) e a versao reescrita (fitas ToTS, 1973-74).
+
+Issue #147 do PDP-10/its, "SHRDLU" (https://github.com/PDP-10/its/issues/147), aberta por Lars Brinkhoff, fechada depois do PR #2318; lida na integra em 13/10/2026 (parte dos comentarios fica atras de "Load more"):
+- larsbrinkhoff: "Another version here: https://github.com/PDP-10/its-vault/tree/master/files/shrdlu  Seemingly, it can display on a 340. There's a call to DISINI, and calls to DISARR looks like they are 340 display lists."
+- larsbrinkhoff, "Some pre compiled binaries to try" (File / Timestamp / Size):
+    SHRDLU; MOBY DUMP   1971
+    SHRDLU; MOBY DUMP   1972-03-18   79
+    SHRDLU; MOBY DMP1   1972-03-18   79
+    SHRDLU; TW DUMP     1972-04-08   70
+    ANDEE; TS SHRDLU    1972-12-13   128
+    ANDEE; TS SHRDL1    1973-02-13   111
+    DDM; SHRDLU WHRS    1973-03-06   104
+    SYS; TS SHRDLM      1973-07-05   79
+    SHRDLU; 105 1       1973-11-08   116
+    SHRDLU; 105 2       1973-11-26   111
+    SHRDLU; 106 1       1974-08-26   24
+    SHRDLU; SHRDLU 107  1974-11-11   40
+    SHRDLU; SHRDLU 108  1974-11-11   40
+  Em seguida ele relata testes de 105, 106, 107 e 108. Nao ha relato de teste do MOBY DUMP na issue.
+- larsbrinkhoff, citando Dave McDonald (pagina maf.directory/misc/shrdlu.html): "In the rush to get [SHRDLU] ready for his thesis defense [Terry] made some direct patches to the Lisp assembly code and never back propagated them to his Lisp source... We kept around the very program image that Terry constructed and used it whenever we could. As an image, [SHRDLU] couldn't keep up with the periodic changes to the ITS, and gradually more and more bit rot set in. One of the last times we used it we only got it to display a couple of lines."
+- larsbrinkhoff: "How about rather than trying to run the old (1973) SHRDLU Lisp code on a recent (1986) Maclisp, we instead try to run it on a Maclisp of similar vintage?" / "Closing since SHRDLU is now working. See e.g. #2318 and #2323".
+- O moby.dump do its-vault tem 402.480 bytes = 80.496 palavras de 36 bits = 78,6 blocos de 1024 palavras, ou seja 79 blocos, o tamanho listado para o dump de 1972-03-18. O dump listado como "1971" nao tem tamanho na tabela.
