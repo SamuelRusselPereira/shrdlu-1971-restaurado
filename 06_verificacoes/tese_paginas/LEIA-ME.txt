@@ -1,0 +1,31 @@
+Paginas da tese (AI-TR-235, Winograd, 1971; PDF publico do MIT, https://dspace.mit.edu/handle/1721.1/7095) ao lado das linhas dos arquivos Z do its-vault.
+Recortes feitos em 13/10/2026 a 110 dpi, a partir do PDF do DSpace (paginas 450 e 454 do PDF = paginas impressas 451 e 455).
+
+1. AITR-235_p451_TCT-PICKUP.png  (Apendice C, pagina 451)
+   Impresso:                 (THOR (THAND (THGOAL (#PICKUP$?EV $?X))
+   z.blocks, linha 950:      (THOR (THAND (THGOAL (#PICKUP$?EV $?X)) (TIMECHK $?EV $?TIME))
+   O mesmo erro de digitacao (sem espaco entre #PICKUP e $?EV) nos dois. O corpo do teorema e identico; so a forma externa muda:
+   a tese imprime (DEFTHEOREM TCT-PICKUP ...), o arquivo guarda (DEFPROP TCT-PICKUP (THCONSE ...) THEOREM), que e como o
+   impressor de arquivos da epoca gravava um teorema definido.
+
+2. AITR-235_p455_BIG.png  (Apendice E, pagina 455)
+   Impresso:                 (BIG ((MEASURE ((#SIZE (#PHYSOB) T)))
+                                   (ADJ (NMEANS ((#PHYSOB #BIG) ((#MORE #SIZE *** (200 200 200))))))))
+   z.dictio, linhas 399-400: (BIG ((MEASURE ((#SIZE (#PHYSOB) T)))
+                                   (ADJ (NMEANS ((#PHYSOB #BIG) ((#MORE #SIZE *** (200 200 200))))))))
+   Identicas. As entradas vizinhas da pagina (A, ABOVE, AFTER, ALL, BALL, BLACK, BLOCK, BLUE, BY, COLOR, CONTAIN, CUBE ...)
+   tambem estao em z.dictio, na mesma ordem.
+
+English: two pages of the thesis (AI-TR-235, public PDF at MIT DSpace) cropped next to the corresponding lines of the Z files.
+Page 451 (Appendix C): theorem TCT-PICKUP carries the same typo, "#PICKUP$?EV" with no space, in print and in z.blocks line 950.
+Page 455 (Appendix E): the dictionary entry BIG is identical, character by character, to z.dictio lines 399-400.
+
+3. AITR-235_p457_ApendiceF.png  (Apendice F, pagina 457: "PLANNER Data for Dialog in Section 1.3")
+   apendice_F_transcrito.txt: as 73 assercoes da pagina, transcritas a mao a partir da imagem.
+   Comparacao mecanica com o banco do Micro-Planner extraido do moby dump (09_moby_dump_extraido/banco_planner.txt):
+   73 de 73 presentes na imagem; a imagem tem uma assercao a mais, (#START EE :DIALOG).
+   Comando (Python 3, na raiz do repositorio):
+     python3 -c "import re;L=lambda p:[re.sub(r'\s+',' ',l.strip()) for l in open(p) if l.startswith('(')];t=set(L('06_verificacoes/tese_paginas/apendice_F_transcrito.txt'));d=set(L('09_moby_dump_extraido/banco_planner.txt'));print(len(t),len(d),t-d,d-t)"
+
+English: page 457 (Appendix F) holds the 73 Micro-Planner assertions of the initial scene; apendice_F_transcrito.txt is a hand transcription of the page
+and the one-line Python command above shows that all 73 are in the database extracted from the image, whose only extra assertion is (#START EE :DIALOG).

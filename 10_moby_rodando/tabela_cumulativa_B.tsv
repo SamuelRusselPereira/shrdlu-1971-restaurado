@@ -1,0 +1,46 @@
+1	1	pick up a big red block.	OK.	OK.	=
+2	2	grasp the pyramid.	I DON'T UNDERSTAND WHICH PYRAMID YOU MEAN.	I DON'T KNOW WHICH PYRAMID YOU MEAN.	?
+3	3	find a block which is taller than the one you are holding and put it into the box.	BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING. OK.	OK. BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING. OK.	=+
+4	4	what does the box contain?	THE BLUE PYRAMID AND THE BLUE BLOCK.	THE BLUE PYRAMID AND THE BLUE BLOCK.	=
+5	5	what is the pyramid supported by?	THE BOX.	THE BOX.	=
+6	6	how many blocks are not in the box?	FOUR OF THEM.	FOUR OF THEM.	=
+7	7	is at least one of them narrower than the one which i told you to pick up?	YES, THE RED CUBE.	BY "THEM", I ASSUME YOU MEAN THE HOW MANY BLOCKS AM NOT IN THE BOX. YES, THE RED CUBE.	=+
+8	8	is it supported?	YES, BY THE TABLE.	BY "IT", I ASSUME YOU MEAN THE AT LEAST ONE OF THEM NARROWER THAN THE ONE WHICH YOU TOLD I TO PICK UP. YES, BY THE TABLE.	=+
+9	9	can the table pick up blocks?	NO.	NO.	=
+10	10	can a pyramid be supported by a block?	YES.	YES.	=
+11	11	can a pyramid support a pyramid?	I DON'T KNOW.	I DON'T KNOW.	=
+12	12	stack up two pyramids.	I CAN'T.	I CAN'T.	=
+13	13	the blue pyramid is nice.	I UNDERSTAND.	FIRST ARG NONATOMIC - PUTPROP I DON'T UNDERSTAND	?
+14	14	i like blocks which are not red, but i don't like anything which supports a pyramid.	I UNDERSTAND.	TOO FEW ARGUMENTS SUPPLIED - APPLY I DON'T UNDERSTAND	?
+15	15	do i like the box?	NO.	I DON'T KNOW.	?
+16	16	do i like anything in the box?	YES, TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.	I DON'T UNDERSTAND	?
+17	17	will you please stack up both of the red blocks and either a green cube or a pyramid?	OK.	OK.	=
+18	18	which cube is sitting on the table?	THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.	THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.	=
+19	19	is there a large block behind a pyramid?	YES, THREE OF THEM: A LARGE RED ONE, A LARGE GREEN CUBE AND THE BLUE ONE.	YES, TWO OF THEM: A LARGE RED ONE AND THE BLUE ONE.	?
+20	20	put a small one onto the green cube which supports a pyramid.	OK.	OK.	=
+21	21	put the littlest pyramid on top of it.	OK.	OK.	=
+22	22	does the shortest thing the tallest pyramid's support supports support anything green?	YES, THE GREEN PYRAMID.	YES, THE GREEN PYRAMID.	=
+23	23	what color is it?	BY "IT", I ASSUME YOU MEAN THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS. RED	I'M NOT SURE WHAT YOU MEAN BY "IT " . DO YOU MEAN: 1 - 2 - 3 - ?2 WHAT COLOR IS IT? GREEN	?
+24	24	how many things are on top of green cubes?	I'M NOT SURE WHAT YOU MEAN BY "ON TOP OF" IN THE PHRASE "ON TOP OF GREEN CUBES". DO YOU MEAN: 1 - DIRECTLY ON THE SURFACE 2 - ANWHERE ON TOP OF ? [2] THREE OF THEM.	THREE OF THEM	?
+25	25	had you touched any pyramid before you put the green one on the little cube?	YES, THE GREEN ONE.	YES, THE GREEN ONE.	=
+26	26	when did you pick it up?	WHILE I WAS STACKING UP THE RED CUBE, A LARGE RED BLOCK AND A LARGE GREEN CUBE.	BY "IT", I ASSUME YOU MEAN THE PYRAMID BEFORE I PUT THE GREEN ONE ON THE LITTLE CUBE. WHILE I WAS STACKING UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.	=+
+27	27	why?	TO GET RID OF IT.	TO GET RID OF IT.	=
+28	28	why did you do that?	TO CLEAN OFF THE RED CUBE.	NO.	?
+29	29	why did you clear off that cube?	TO PUT IT ON A LARGE GREEN CUBE.	I DON'T UNDERSTAND	?
+30	30	why did you do that?	TO STACK UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.	NO.	?
+31	31	why did you do that?	BECAUSE YOU ASKED ME TO.	NO.	?
+32	32	how did you do it?	BY PUTTING A LARGE RED BLOCK ON THE TABLE ; THEN LETTING GO OF IT ; THEN PUTTING A LARGE GREEN CUBE ON IT ; THEN LETTING GO OF THAT CUBE ; THEN PUTTING THE RED CUBE ON THAT CUBE ; THEN LETTING GO OF THAT CUBE.	I DON'T UNDERSTAND	?
+33	33	how many objects did you touch while you were doing it?	FOUR OF THEM.	NONE OF THEM.	?
+34	34	what did the red cube support before you started to clean it off?	THE GREEN PYRAMID.	THE GREEN PYRAMID.	=
+35	35	there were five blocks to the left of the box then.	NO, ONLY FOUR OF THEM: THE RED CUBE , TWO LARGE GREEN CUBES AND A LARGE RED BLOCK.	NO, ONLY, NONE OF THEM.	?
+36	36	put the blue pyramid on the block in the box.	OK.	OK.	=
+37	37	is there anything which is bigger than every pyramid but is not as wide as the thing that supports it?	YES, THE BLUE BLOCK.	CAR MADE ILGL MEM REF I DON'T UNDERSTAND	?
+38	39	does a steeple	SORRY, I DON'T KNOW THE WORD "STEEPLE". PLEASE TYPE TWO SPACES.	SORRY, I DON'T KNOW THE WORD "STEEPLE". PLEASE TYPE TWO SPACES.	=
+39	40	a "steeple" is a stack which contains two green cubes and a pyramid.	I UNDERSTAND.	I UNDERSTAND.	=
+40	41	are there any steeples now?	NO.	NO.	=
+41	42	build one.	OK.	CAR MADE ILGL MEM REF I DON'T UNDERSTAND	?
+42	43	call the biggest block "superblock".	OK.	CADAAR MADE ILGL MEM REF I DON'T UNDERSTAND	?
+43	44	have you picked up superblock since we began?	YES.	SORRY, I DON'T KNOW THE WORD "SUPERBLOCK". PLEASE TYPE TWO SPACES.SINCE WE BEGAN?	?
+44	45	why did you drop it?	BY "IT", I ASSUME YOU MEAN THE SUPERBLOCK. I CAN'T EXPLAIN A NON-EXISTENT EVENT.	I DON'T UNDERSTAND	?
+45	46	is there anything to the right of the red pyramid?	YES, FOUR THINGS: THE BOX , THE RED CUBE, THE BLUE PYRAMID AND THE BLOCK NAMED SUPERBLOCK	YES, THREE OF THEM: THE BOX , THE BLUE PYRAMID AND THE BLUE BLOCK.	?
+46	47	thank you.	YOU'RE WELCOME!	YOU'RE WELCOME!	=

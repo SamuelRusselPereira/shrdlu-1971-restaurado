@@ -1,0 +1,29 @@
+Citacoes de 2024-2025 usadas no README, conferidas na fonte em 13/10/2026 (texto exato, autor, data, onde).
+
+Grupo pidp-10, fio "SHRDLU" (https://groups.google.com/g/pidp-10/c/34dln67jdS4/m/TF-0YUFiBgAJ):
+- Charley Jones, 04/08/2024: "From the documentation, it was said that the source code was lost."
+- Eric Swenson, 04/08/2024: "They were mostly complete and certainly not lost." / "We got the sources from the Tapes of Tech Square (ToTS) archive at MIT."
+  (fala dos fontes de 1973-74, hoje em src/shrdlu do PDP-10/its)
+- Eric Swenson, 04/08/2024: "The SHRDLU demo, which we have had committed to the ITS GitHub repository does not have any accompanying sources.
+  In fact, however, I do have sources for that demo, but have not yet tried building the demo from those sources."
+- Eric Swenson, 04/08/2024: "So the demo (TWDEMO) is nothing more than a scripted presentation that renders on the Type 340 display."
+- Charley Jones, 05/08/2024: "Sadly, the original interactive Shrdlu has not been recovered. We have only the scripted demo."
+- Eric Swenson, 05/08/2024: "Actually, the original SHRDLU *has* been recovered." (idem: os fontes de 1973-74)
+- Eric Swenson, 05/08/2024, relatando conversa com Terry Winograd: TWDEMO "was a scripted movie driver that output to the Type 340 display",
+  "all commands and responses had been run through SHRDLU", "he may have updated SHRDLU multiple times to bluff bugs", e o roteiro foi criado a partir de
+  "interactions with SHRDLU prior to a complete rewrite by Stu Card in 1971 or 1972".
+- Eric Swenson, 03/12/2025: "None of the sources you see in the SHRDLU directory (save DEMO FLICK) have anything to do with TWDEMO"
+- Eric Swenson, 04/12/2025: "Yes it is. I wish we had source to TWDEMO, but we don't."
+- Lars Brinkhoff, 11/12/2025: "I haven't examined dumped LISP images much, but if I recall they are hard to understand."
+
+Grupo pidp-10, fio "Fwd: SHRDLU and MicroPlanner" (https://groups.google.com/g/pidp-10/c/wuuzkAa77Lc=/m/9dBx-mcZAQAJ), 22-30/07/2024:
+- Eric Swenson, 28/07/2024: "The demo (TWDEMO) does not use SHRDLU." / "TWDEMO was created by capturing all these graphics commands, as well as SHRDLU commands/questions and responses."
+
+Affine Layer, "SHRDLU", Christopher Hesse, 11/12/2025 (https://affinelayer.com/shrdlu/):
+- "The demo was created based on actual outputs from SHRDLU but the available SHRDLU source only partially reproduces the demo."
+- "If there was a single version of the source code that reproduces the demo, it seems hard to find today."
+
+Observacoes:
+- Sobre o fonte do TWDEMO, Swenson disse em ago/2024 que tinha fontes da demo (sem ter tentado compilar) e em dez/2025 que nao ha fonte do TWDEMO. Nenhum fonte do TWDEMO foi publicado. O que existe e o roteiro (demo.flick) e o binario (ts.twdemo).
+- Quando Swenson diz que "the original SHRDLU has been recovered", fala dos fontes de 1973-74 das fitas ToTS (pasta 01 deste repositorio), nao da versao da epoca da tese.
+- O relato de Winograd (via Swenson) de uma reescrita completa por Stu Card em 1971 ou 1972 e coerente com o que este repositorio mostra: uma versao anterior a reescrita (arquivos Z, moby dump) e a versao reescrita (fitas ToTS, 1973-74).

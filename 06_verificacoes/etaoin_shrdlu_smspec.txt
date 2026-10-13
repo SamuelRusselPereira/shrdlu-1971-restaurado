@@ -1,0 +1,15 @@
+Verificacao: o etaoin-shrdlu (Peter Cerman, https://github.com/pcerman/etaoin-shrdlu, commit d5afd0d) herda a corrupcao do smspec do code.tar?
+Data: 13/10/2026.
+Metodo: o build.sh do etaoin baixa o code.tar de Stanford e aplica patch/SMSPEC.patch por cima do smspec. Comparei, linha a linha, as 25 linhas corrompidas listadas em smspec_corrupcao_stanford.diff com as linhas "-" e "+" do SMSPEC.patch (ignorando espacos e a troca de "/" por "\" que o patch faz em todo o arquivo).
+
+Resultado:
+- As 25 linhas corrompidas sao todas tocadas pelo patch.
+- 21 saem iguais a copia limpa das fitas do MIT (smspec.94).
+- 2 linhas de codigo continuam corrompidas, na funcao SMPOSS2 (possessivo, "the pyramid's ..."):
+    patch (linhas 149-150):   (SETQ SMRUB (SM MODNODE))
+                              (SETQ RELLIST (RETQ AMOB1 (SM HEADNODE)))
+    fitas do MIT (smspec.94): (SETQ SMSUB (SM MODNODE))
+                              (SETQ RELLIST (SETQ SMOB1 (SM HEADNODE)))
+  SMRUB nao e variavel do PROG (a variavel e SMSUB) e RETQ nao existe em lugar nenhum do etaoin nem do SHRDLU: a chamada da uma funcao indefinida.
+  Sao as mesmas duas linhas que o port Common Lisp da pagina de Winograd deixou corrompidas (oraculo_cl_smposs2.diff).
+- 2 diferencas sem efeito: um comentario ("IB" por "IF") e um espaco antes de parentese.

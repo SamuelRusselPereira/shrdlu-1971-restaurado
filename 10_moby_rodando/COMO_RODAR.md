@@ -41,6 +41,7 @@ Testado em 10–13/10/2026 num Linux (Ubuntu), com o emulador KA10 do projeto PD
 - Digite as linhas de `smit3_corrigida.lisp` e `who_corrigida.lisp`. **São mudanças minhas** (ver `RESULTADOS.md`). Sem elas, a frase 23 pergunta qual "it" em vez de responder.
 - Digite a linha de `loc_thmlist_corrigida.lisp`. Ela devolve à relação #LOC a lista de teoremas da linha 892 de `z.dictio` (ver `RESULTADOS.md`). Sem ela, a frase 35 acha zero blocos.
 - Digite as linhas de `smrsq_corrigida.lisp`, `smng1_corrigida.lisp` e `size_corrigida.lisp`. **São correções minhas**, feitas como nas versões seguintes do programa (ver `RESULTADOS.md`). Sem elas, a frase 37 dá erro.
+- Digite a linha de `ans2_corrigida.lisp`. Uma restauração (a marca #VAGUE passa a ser encontrada) e uma reconstrução pela tese, seção 4.4.2 (HOW MANY responde "OF THEM"); ver `RESULTADOS.md`. Sem ela, as frases 16 e 46 dizem "OF THEM" onde a tese diz "THINGS".
 - `(SHRDLU)`
 - Aparece `READY`. Digite as frases em MAIÚSCULAS, terminando com `.` ou `?`.
 
@@ -61,6 +62,7 @@ Testado em 10–13/10/2026 num Linux (Ubuntu), com o emulador KA10 do projeto PD
 - `boot_moby.sh`: liga o ITS, entra e carrega a imagem com as chaves do diálogo.
 - `dialogo2.py`: digita o diálogo da tese frase a frase e grava a transcrição. Responde "2" à pergunta de esclarecimento, dá os dois espaços pedidos e manda um espaço quando o programa fica parado.
 - `compara.py`: compara uma transcrição com a tese, frase a frase, pela posição.
+- `rodadas_cumulativas.sh` e `cum_boot.sh`: as três rodadas da tabela cumulativa (A: só original + ambiente; B: + FINDQ; C: + 6 restaurações), com `ans2_restauracao.lisp` (só a parte de restauração da ANS2). Transcrições em `transcricoes/cumulativa_A.txt` etc.
 - `rodada16_completa.sh`: a rodada 16 inteira, a definitiva (liga, carrega todos os ajustes, digita as 46 frases). `rodada10_completa.sh` a `rodada15_completa.sh` são as anteriores.
 - `ponto12.sh`, `ponto22.sh`, `ponto27.sh`, `ponto34.sh`, `ponto36.sh` e `ponto36b.sh`: rodam até a frase 12, 22, 27, 34 ou 36 e salvam o job como ponto de controle (`:pdump oshrdl;s12 dump`). `carrega_ponto.sh s12` recarrega. Cada um carrega os ajustes que existiam quando foi feito: o `ponto36b.sh` tem todos os da rodada 14, e o `ponto34.sh`, os da rodada 13; os mais antigos não têm os que vieram depois.
 - `trace_p1.lisp`, `trace_ans1.lisp`, `trace_ansthm.lisp`: rastreios que imprimem os argumentos de P1, ANS1 e ANSTHM (carregue depois de ligar o rastreio).

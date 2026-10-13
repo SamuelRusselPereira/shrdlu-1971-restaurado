@@ -245,11 +245,11 @@ Contagem estrita, para publicação (comparação ignora só maiúsculas e pontu
 Nada é alterado nos arquivos originais; tudo é redefinido na hora de rodar, por `rodada16_completa.sh`.
 1. Quatro variáveis: `NOSTOP T`, `NOMEM NIL`, `VALUE NIL`, `PLANNERSEE NIL`.
 2. Código do próprio Winograd, tirado dos arquivos Z: `SMNGOF` (1).
-3. Contornos do ambiente MacLisp/ITS: `READCH` e um invólucro de `PUTPROP` (2).
+3. Contorno do ambiente MacLisp/ITS: `READCH` redefinida por cima da original (`fixes_ambiente.lisp`, duas linhas: a primeira guarda a READCH original como OLDREADCH, a segunda define a nova) (1). Uma versão anterior deste inventário contava as duas linhas como duas intervenções.
 4. Função que não existe em lugar nenhum, reconstruída por mim: `FINDQ` (1).
 5. Correções de erros do código da época (restauração): `SMONE`, `SMPROP`, `SMADJ`, `SMIT3`, THMLIST de `#LOC`, `ANS2` parte 1 (6).
 6. Escolhas minhas com justificativa (reconstrução): `WHO`, MODAL zerado, `GOALIZE2`, `SMRSQ`, `SMNG1`, `SIZE`, `ANS2` parte 2, e o remendo na gramática compilada (`remendo_ng.lisp`: duas palavras de código de máquina alteradas, contadas como uma intervenção) (8).
-Total: 18 intervenções de código mais 4 variáveis. Cada uma tem a explicação nas seções acima.
+Total: 17 intervenções de código mais 4 variáveis. Cada uma tem a explicação nas seções acima.
 
 Sessão nova, as 46 frases, as correções da rodada 15 mais `ans2_corrigida.lisp`. Transcrição: `transcricoes/rodada16_definitiva.txt`; tabela: `tabela_rodada16.tsv`.
 
@@ -266,3 +266,21 @@ Efeito: a 16 fica igual à tese ("YES, TWO THINGS: ..."); a 46 passa a dizer "FO
 **Quase iguais agora:** 2, 19, 24 (sem a pergunta de esclarecimento), 37 e 46.
 
 **Fonte nova:** os fontes do Micro-Planner de 1971 (plnr.169–171, set./out. 1971; plnr.176, dez. 1971) estão em <https://github.com/MITDDC/plnr-1971-1982> (fitas do MIT, coleção MC-0741). Até aqui o Micro-Planner da época só existia compilado dentro do moby dump.
+
+## Rodadas cumulativas A, B e C (13/10/2026): quanto vem de 1971 e quanto vem de 2026
+
+Três sessões novas, as 46 frases, com subconjuntos crescentes dos ajustes da rodada 16 (`rodadas_cumulativas.sh`; a ANS2 entra na rodada C só com a parte de restauração, `ans2_restauracao.lisp`).
+
+| Rodada | Carregado | Idênticas | Texto a mais | Diferentes | Transcrição |
+|---|---|---|---|---|---|
+| A | 4 variáveis + `READCH` + `SMNGOF` dos arquivos Z | 20 | 4 | 22 | `transcricoes/cumulativa_A.txt` |
+| B | A + `FINDQ` | 21 | 4 | 21 | `transcricoes/cumulativa_B.txt` |
+| C | B + `SMONE`, `SMPROP`, `SMADJ`, `SMIT3`, THMLIST de `#LOC`, `ANS2` parte 1 | 27 | 5 | 14 | `transcricoes/cumulativa_C.txt` |
+| 16 | C + `WHO`, MODAL zerado, `GOALIZE2`, `SMRSQ`, `SMNG1`, `SIZE`, `ANS2` parte 2, remendo da gramática | 36 | 5 | 5 | `transcricoes/rodada16_definitiva.txt` |
+
+- A → B: só a frase 5 muda (`FINDQ UNDEFINED FUNCTION` → "THE BOX.").
+- B → C: 13, 35, 42, 43, 44 e 45 passam a idênticas; 14 passa de erro (`TOO FEW ARGUMENTS SUPPLIED - APPLY`) a "I UNDERSTAND. I UNDERSTAND.".
+- C → 16: 15, 16, 23 e 28 a 33 passam a idênticas. Na rodada C a 24 responde "THREE THINGS" (sem a regra HOWMANY da ANS2 parte 2) e a 33 "NOTHING THINGS".
+- Em nenhuma rodada o diálogo travou: as 46 frases foram digitadas e respondidas (com erro ou "I DON'T UNDERSTAND" onde falta a correção).
+- Tabelas: `tabela_cumulativa_A.tsv`, `tabela_cumulativa_B.tsv`, `tabela_cumulativa_C.tsv`.
+
