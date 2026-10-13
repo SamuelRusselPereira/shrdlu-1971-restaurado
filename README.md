@@ -141,10 +141,10 @@ Valem para o código das pastas 1 e 2 (e para as cópias de Stanford), não para
 5. Para decodificar o moby dump: compile o `dis10` de https://github.com/larsbrinkhoff/pdp10-its-disassembler (`make dis10`) e rode `./dis10 -Wits moby.dump > moby_dis.txt`. Depois use os scripts de `09_moby_dump_extraido/scripts/` (`mem.py` primeiro).
 6. Para rodar a imagem: `10_moby_rodando/COMO_RODAR.md`.
 
-## Origem dos arquivos
+## Origem dos arquivos e licença
 
 - **Redistribuídos sem alteração**, vindos dos repositórios públicos do projeto PDP-10 (material do MIT AI Lab dos anos 1970): as pastas `01` a `05`, `07` e `08` (arquivos das fitas, `moby.dump`, `ts.twdemo`, manuais). Os repositórios de origem estão em "Fontes".
-- **Trabalho novo deste repositório** (2026): os scripts, as análises, as comparações (`06`, `09`) e os ajustes e transcrições de `10_moby_rodando/`. Cada ajuste é um arquivo separado; nenhum arquivo original foi editado.
+- **Trabalho novo deste repositório** (2026): os scripts, as análises, as comparações (`06`, `09`) e os ajustes e transcrições de `10_moby_rodando/`. Cada ajuste é um arquivo separado; nenhum arquivo original foi editado. **Licença: MIT** (arquivo `LICENSE`), só para esse trabalho novo; o material histórico redistribuído mantém os direitos de origem.
 
 ## Fontes
 
