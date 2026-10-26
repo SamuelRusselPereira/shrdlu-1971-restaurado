@@ -16,7 +16,7 @@ jobs:
   testar:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Clang e a biblioteca do UBSan
         run: sudo apt-get update && sudo apt-get install -y clang libclang-rt-dev
       - name: Testar (46 frases, teste minimo, sonda da frase 16, 10 frases extras, modo interativo)
