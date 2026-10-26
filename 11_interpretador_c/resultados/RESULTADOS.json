@@ -1,0 +1,84 @@
+{
+  "resultado": "OK",
+  "falhas": [],
+  "compiladores": {
+    "gcc": {
+      "dialogo_46": {
+        "its_iguais": 46,
+        "tese_iguais": 36,
+        "tese_com_texto_a_mais": [
+          3,
+          7,
+          8,
+          14,
+          26
+        ],
+        "tese_diferentes": [
+          2,
+          19,
+          24,
+          37,
+          46
+        ],
+        "sha256_dialogo": "5a32a9fc6fadfcaf8a574e5d1fb6f3aecaebcd8ddfea888e311327b66e74c35f"
+      },
+      "controle_sem_planner_da_imagem": {
+        "its_diferentes": [
+          16
+        ]
+      },
+      "teste_minimo": "(#FFF 7)",
+      "sonda_frase16": {
+        "eventos_its": 20,
+        "eventos_c": 20,
+        "igual_sem_espacos": true,
+        "igual_linha_a_linha": true,
+        "linhas_its": 32,
+        "linhas_c": 32
+      },
+      "frases_extras": {
+        "iguais": 10,
+        "frases": 10
+      }
+    },
+    "clang_ubsan": {
+      "dialogo_46": {
+        "its_iguais": 46,
+        "tese_iguais": 36,
+        "tese_com_texto_a_mais": [
+          3,
+          7,
+          8,
+          14,
+          26
+        ],
+        "tese_diferentes": [
+          2,
+          19,
+          24,
+          37,
+          46
+        ],
+        "sha256_dialogo": "5a32a9fc6fadfcaf8a574e5d1fb6f3aecaebcd8ddfea888e311327b66e74c35f"
+      },
+      "controle_sem_planner_da_imagem": {
+        "its_diferentes": [
+          16
+        ]
+      },
+      "teste_minimo": "(#FFF 7)",
+      "sonda_frase16": {
+        "eventos_its": 20,
+        "eventos_c": 20,
+        "igual_sem_espacos": true,
+        "igual_linha_a_linha": true,
+        "linhas_its": 32,
+        "linhas_c": 32
+      },
+      "frases_extras": {
+        "iguais": 10,
+        "frases": 10
+      }
+    }
+  }
+}

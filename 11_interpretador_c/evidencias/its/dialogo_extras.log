@@ -1,0 +1,12 @@
+/home/claude/work/its_tape/f31/dialogo_extra.py:10: SyntaxWarning: invalid escape sequence '\;'
+  elif c == ';': key('-l', '--', '\;')
+1 what does the box contain? -> WHAT DOES THE BOX CONTAIN? | * | *  THE BLUE PYRAMID. []
+2 how many blocks are not in the box? -> HOW | READY/ | MANY BLOCKS ARE NOT IN THE BOX? | * | * FIVE OF THEM. []
+3 is the blue block red? -> IS T | READY/ | HE BLUE BLOCK RED? | * | *I DON'T UNDERSTAND | READY/ []
+4 is the blue pyramid in the box? -> IS THE BLUE PYRAMID IN THE BOX? | * | *  YES. []
+5 what is the color of the box? -> WHA | READY/ | T IS THE COLOR OF THE BOX? | * | (SMNG2 THE COLOR) | READY/ []
+6 how many pyramids are there? -> HOW MANY PYRAMIDS ARE THERE? | * | * THREE OF THEM. []
+7 pick up the green pyramid. -> PICK | READY/ | UP THE GREEN PYRAMID. | * | *  OK. []
+8 what are you holding? -> WHAT | READY/ | ARE YOU HOLDING? | * | *  THE GREEN PYRAMID. []
+9 put it on the red cube. -> PUT | READY/ | IT ON THE RED CUBE. | * | *I DON'T UNDERSTAND | READY/ []
+10 what is the green pyramid supported by? -> WHAT IS THE GREEN PYRAMID SUPPORTED BY? | * | * NOTHING THINGS. []

@@ -1,0 +1,416 @@
+
+;PURE UNBOUND VARIABLE - 
+historicos/plnr.176  331 formas, 0 erros
+apoio/boot1.lisp    9 formas, 0 erros
+apoio/macr_z.lisp    7 formas, 0 erros
+historicos/z.syscom   80 formas, 0 erros
+historicos/z.gramar   16 formas, 0 erros
+historicos/z.dictio   48 formas, 0 erros
+historicos/z.semant  110 formas, 0 erros
+
+;EVENTLIST UNBOUND VARIABLE - 
+historicos/z.answer   39 formas, 0 erros
+
+
+TC-CALL 
+
+TC-CLEARTOP 
+
+TC-GET-RID-OF 
+
+TC-GRASP 
+
+TC-NAME 
+
+TC-NOTICE 
+
+TC-PACK 
+
+TC-PICKUP 
+
+TC-PUTIN 
+
+TC-PUTON 
+
+TC-RAISEHAND 
+
+TC-STACKUP 
+
+TC-UNGRASP 
+
+TC-ON 
+
+TC-PHYSOB 
+historicos/z.blocks  102 formas, 0 erros
+historicos/z.break    8 formas, 0 erros
+
+
+((#IS :B1 #BLOCK)) 
+
+((#IS :B2 #PYRAMID)) 
+
+((#IS :B3 #BLOCK)) 
+
+((#IS :B4 #PYRAMID)) 
+
+((#IS :B5 #PYRAMID)) 
+
+((#IS :B6 #BLOCK)) 
+
+((#IS :B7 #BLOCK)) 
+
+((#IS :B10 #BLOCK)) 
+
+((#IS #RED #COLOR)) 
+
+((#IS #BLUE #COLOR)) 
+
+((#IS #GREEN #COLOR)) 
+
+((#IS #WHITE #COLOR)) 
+
+((#IS #BLACK #COLOR)) 
+
+((#IS #RECTANGULAR #SHAPE)) 
+
+((#IS #ROUND #SHAPE)) 
+
+((#IS #POINTED #SHAPE)) 
+
+((#IS :SHRDLU #ROBOT)) 
+
+((#IS :FRIEND #PERSON)) 
+
+((#IS :HAND #HAND)) 
+
+((#AT :B1 (100 100 0))) 
+
+((#AT :B2 (100 100 100))) 
+
+((#AT :B3 (400 0 0))) 
+
+((#AT :B4 (640 640 1))) 
+
+((#AT :B5 (500 100 200))) 
+
+((#AT :B6 (0 300 0))) 
+
+((#AT :B7 (0 240 300))) 
+
+((#AT :B10 (300 640 0))) 
+
+((#SUPPORT :B1 :B2)) 
+
+((#SUPPORT :B3 :B5)) 
+
+((#SUPPORT :B6 :B7)) 
+
+((#CLEARTOP :B2)) 
+
+((#CLEARTOP :B4)) 
+
+((#CLEARTOP :B5)) 
+
+((#CLEARTOP :B7)) 
+
+((#CLEARTOP :B10)) 
+
+((#MANIP :B1)) 
+
+((#MANIP :B2)) 
+
+((#MANIP :B3)) 
+
+((#MANIP :B4)) 
+
+((#MANIP :B5)) 
+
+((#MANIP :B6)) 
+
+((#MANIP :B7)) 
+
+((#MANIP :B10)) 
+
+((#SUPPORT :TABLE :B1)) 
+
+((#SUPPORT :TABLE :B3)) 
+
+((#SUPPORT :BOX :B4)) 
+
+((#SUPPORT :TABLE :B10)) 
+
+((#SUPPORT :TABLE :B6)) 
+
+((#SUPPORT :TABLE :BOX)) 
+
+((#AT :BOX (600 600 0))) 
+
+((#IS :BOX #BOX)) 
+
+((#IS :TABLE #TABLE)) 
+
+((#CONTAIN :BOX :B4)) 
+
+((#SHAPE :B1 #RECTANGULAR)) 
+
+((#SHAPE :B3 #RECTANGULAR)) 
+
+((#SHAPE :B2 #POINTED)) 
+
+((#SHAPE :B4 #POINTED)) 
+
+((#SHAPE :B5 #POINTED)) 
+
+((#SHAPE :B6 #RECTANGULAR)) 
+
+((#SHAPE :B7 #RECTANGULAR)) 
+
+((#SHAPE :B10 #RECTANGULAR)) 
+
+((#COLOR :B1 #RED)) 
+
+((#COLOR :B2 #GREEN)) 
+
+((#COLOR :B3 #GREEN)) 
+
+((#COLOR :B4 #BLUE)) 
+
+((#COLOR :B5 #RED)) 
+
+((#COLOR :B6 #RED)) 
+
+((#COLOR :B7 #GREEN)) 
+
+((#COLOR :B10 #BLUE)) 
+
+((#COLOR :BOX #WHITE)) 
+
+((#COLOR :TABLE #BLACK)) 
+
+((#CALL :SHRDLU SHRDLU)) 
+
+((#CALL :FRIEND YOU)) 
+historicos/data.5   11 formas, 0 erros
+apoio/reconstruidas.lisp   13 formas, 0 erros
+apoio/ambiente.lisp    3 formas, 0 erros
+apoio/compiladas.lisp  454 formas, 0 erros
+apoio/variaveis.lisp    5 formas, 0 erros
+ajustes/rodada16/findq_reconstruida.lisp    1 formas, 0 erros
+ajustes/rodada16/smone_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smprop_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smadj_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/modal_zerado.lisp    2 formas, 0 erros
+ajustes/rodada16/goalize2_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smit3_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/who_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/loc_thmlist_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smrsq_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smng1_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/size_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/ans2_corrigida.lisp    1 formas, 0 erros
+ajustes/imagem/shrdlu_como_na_imagem.lisp    2 formas, 0 erros
+ajustes/imagem/conj_como_na_imagem.lisp    2 formas, 0 erros
+apoio/macr_z.lisp    7 formas, 0 erros
+ajustes/imagem/ng_como_na_imagem.lisp    5 formas, 0 erros
+
+ajustes/rodada16/remendo_ng_no_texto.lisp    3 formas, 0 erros
+ajustes/imagem/threturn_como_na_imagem.lisp    2 formas, 0 erros
+ajustes/imagem/etaoin_como_na_imagem.lisp   20 formas, 0 erros
+apoio/lote.lisp    2 formas, 0 erros
+(REMENDO-NG 1 1) 
+READY/ PICK UP A BIG RED BLOCK.
+
+* 
+*  OK.
+READY/ GRASP THE PYRAMID.
+
+* 
+*  I DON'T KNOW WHICH PYRAMID YOU MEAN.
+READY/ FIND A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX.
+
+* 
+*  OK. BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE
+I AM HOLDING.
+*  OK.
+READY/ WHAT DOES THE BOX CONTAIN?
+
+* 
+*  THE BLUE PYRAMID AND THE BLUE BLOCK.
+READY/ WHAT IS THE PYRAMID SUPPORTED BY?
+
+* 
+*  THE BOX.
+READY/ HOW MANY BLOCKS ARE NOT IN THE BOX?
+
+* 
+* FOUR OF THEM.
+READY/ IS AT LEAST ONE OF THEM NARROWER THAN THE ONE WHICH I TOLD YOU TO PICK UP?
+
+*  BY "THEM", I ASSUME YOU MEAN THE HOW MANY BLOCKS AM NOT IN THE BOX.
+*  YES,  THE RED CUBE.
+READY/ IS IT SUPPORTED?
+
+*  BY "IT", I ASSUME YOU MEAN THE AT LEAST ONE OF THEM NARROWER THAN THE
+ONE WHICH YOU TOLD I TO PICK UP.
+*  YES,  BY THE TABLE.
+READY/ CAN THE TABLE PICK UP BLOCKS?
+
+* 
+*  NO.
+READY/ CAN A PYRAMID BE SUPPORTED BY A BLOCK?
+
+* 
+*  YES.
+READY/ CAN A PYRAMID SUPPORT A PYRAMID?
+
+* 
+*  I DON'T KNOW.
+READY/ STACK UP TWO PYRAMIDS.
+
+* 
+*  I CAN'T.
+READY/ THE BLUE PYRAMID IS NICE.
+
+* 
+*  I UNDERSTAND.
+READY/ I LIKE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PYRAMID.
+
+* 
+*  I UNDERSTAND.
+*  I UNDERSTAND.
+READY/ DO I LIKE THE BOX?
+
+* 
+*  NO.
+READY/ DO I LIKE ANYTHING IN THE BOX?
+
+* 
+*  YES,  THE BLUE PYRAMID
+READY/ WILL YOU PLEASE STACK UP BOTH OF THE RED BLOCKS AND EITHER A GREEN CUBE OR A PYRAMID?
+
+* 
+*  OK.
+READY/ WHICH CUBE IS SITTING ON THE TABLE?
+
+* 
+*  THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.
+READY/ IS THERE A LARGE BLOCK BEHIND A PYRAMID?
+
+* 
+*  YES, TWO OF THEM:  A LARGE RED ONE AND THE BLUE ONE.
+READY/ PUT A SMALL ONE ONTO THE GREEN CUBE WHICH SUPPORTS A PYRAMID.
+
+* 
+*  OK.
+READY/ PUT THE LITTLEST PYRAMID ON TOP OF IT.
+
+* 
+*  OK.
+READY/ DOES THE SHORTEST THING THE TALLEST PYRAMID'S SUPPORT SUPPORTS SUPPORT ANYTHING GREEN?
+
+* 
+*  YES,  THE GREEN PYRAMID.
+READY/ WHAT COLOR IS IT?
+
+*  BY "IT", I ASSUME YOU MEAN THE SHORTEST THING THE TALLEST PYRAMID"S
+SUPPORT SUPPORTS.
+*  RED
+READY/ HOW MANY THINGS ARE ON TOP OF GREEN CUBES?
+
+* 
+* THREE OF THEM
+READY/ HAD YOU TOUCHED ANY PYRAMID BEFORE YOU PUT THE GREEN ONE ON THE LITTLE CUBE?
+
+* 
+*  YES,  THE GREEN ONE.
+READY/ WHEN DID YOU PICK IT UP?
+
+*  BY "IT", I ASSUME YOU MEAN THE PYRAMID BEFORE I PUT THE GREEN ONE ON
+THE LITTLE CUBE.
+*  WHILE I WAS STACKING UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE
+ GREEN CUBE.
+READY/ WHY?
+
+* 
+*  TO GET RID OF IT.
+READY/ WHY DID YOU DO THAT?
+
+* 
+*  TO CLEAN OFF THE RED CUBE.
+READY/ WHY DID YOU CLEAR OFF THAT CUBE?
+
+* 
+*  TO PUT IT ON A LARGE GREEN CUBE.
+READY/ WHY DID YOU DO THAT?
+
+* 
+*  TO STACK UP THE RED CUBE , A LARGE RED BLOCK AND A LARGE GREEN CUBE.
+READY/ WHY DID YOU DO THAT?
+
+* 
+*  BECAUSE YOU ASKED ME TO.
+READY/ HOW DID YOU DO IT?
+
+* 
+*  BY PUTTING A LARGE RED BLOCK ON THE TABLE ; THEN LETTING GO OF IT ;
+ THEN PUTTING A LARGE GREEN CUBE ON IT ; THEN LETTING GO OF THAT CUBE ;
+ THEN PUTTING THE RED CUBE ON THAT CUBE ; THEN LETTING GO OF THAT CUBE.
+READY/ HOW MANY OBJECTS DID YOU TOUCH WHILE YOU WERE DOING IT?
+
+* 
+* FOUR OF THEM.
+READY/ WHAT DID THE RED CUBE SUPPORT BEFORE YOU STARTED TO CLEAN IT OFF?
+
+* 
+*  THE GREEN PYRAMID.
+READY/ THERE WERE FIVE BLOCKS TO THE LEFT OF THE BOX THEN.
+
+* 
+*  NO, ONLY, FOUR OF THEM:  THE RED CUBE , TWO LARGE GREEN CUBES AND A
+ LARGE RED BLOCK.
+READY/ PUT THE BLUE PYRAMID ON THE BLOCK IN THE BOX.
+
+* 
+*  OK.
+READY/ IS THERE ANYTHING WHICH IS BIGGER THAN EVERY PYRAMID BUT IS NOT AS WIDE AS THE THING THAT SUPPORTS IT?
+
+* 
+*  YES, FOUR THINGS:  THE TABLE , THE BOX , A LARGE RED BLOCK AND THE
+ BLUE BLOCK.
+READY/ DOES A STEEPLE 
+ *SORRY, I DON'T KNOW THE WORD "STEEPLE". PLEASE TYPE TWO
+ SPACES.  
+
+READY/ A "STEEPLE" IS A STACK WHICH CONTAINS TWO GREEN CUBES AND A PYRAMID.
+
+* 
+*  I UNDERSTAND.
+READY/ ARE THERE ANY STEEPLES NOW?
+
+* 
+*  NO.
+READY/ BUILD ONE.
+
+* 
+*  OK.
+READY/ CALL THE BIGGEST BLOCK "SUPERBLOCK".
+
+* 
+*  OK.
+READY/ HAVE YOU PICKED UP SUPERBLOCK SINCE WE BEGAN?
+
+* 
+*  YES.
+READY/ WHY DID YOU DROP IT?
+
+*  BY "IT", I ASSUME YOU MEAN THE SUPERBLOCK.
+*  I CAN'T EXPLAIN A NON-EXISTENT EVENT.
+READY/ IS THERE ANYTHING TO THE RIGHT OF THE RED PYRAMID?
+
+* 
+*  YES, FOUR THINGS:  THE BOX , THE RED CUBE , THE BLUE PYRAMID AND THE
+ BLUE BLOCK.
+READY/ THANK YOU.
+
+* *YOU'RE WELCOME!
+READY/ 

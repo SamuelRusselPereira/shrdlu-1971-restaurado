@@ -1,0 +1,23 @@
+# Compila e testa o interpretador em C da pasta 11 a cada mudanca nela (GCC e Clang com UBSan).
+# Builds and tests the C interpreter in folder 11 on every change to it (GCC and Clang with UBSan).
+name: Interpretador em C (pasta 11)
+
+on:
+  push:
+    paths:
+      - '11_interpretador_c/**'
+      - '.github/workflows/interpretador_c.yml'
+  pull_request:
+    paths:
+      - '11_interpretador_c/**'
+  workflow_dispatch:
+
+jobs:
+  testar:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clang e a biblioteca do UBSan
+        run: sudo apt-get update && sudo apt-get install -y clang libclang-rt-dev
+      - name: Testar (46 frases, teste minimo, sonda da frase 16, 10 frases extras, modo interativo)
+        run: python3 11_interpretador_c/testar.py

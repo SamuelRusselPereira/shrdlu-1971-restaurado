@@ -1,0 +1,10 @@
+what does the box contain?
+how many blocks are not in the box?
+is the blue block red?
+is the blue pyramid in the box?
+what is the color of the box?
+how many pyramids are there?
+pick up the green pyramid.
+what are you holding?
+put it on the red cube.
+what is the green pyramid supported by?

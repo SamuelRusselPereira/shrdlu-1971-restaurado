@@ -1,0 +1,47 @@
+# Ordem de carga do SHRDLU no interpretador. Caminhos relativos a esta pasta.
+# Load order of SHRDLU in the interpreter. Paths relative to this folder.
+#
+# 1. Micro-Planner e arquivos historicos, intactos (z.mover fica de fora: e codigo de maquina do PDP-10)
+historicos/plnr.176
+apoio/boot1.lisp
+apoio/macr_z.lisp
+historicos/z.syscom
+historicos/z.gramar
+historicos/z.dictio
+historicos/z.semant
+historicos/z.answer
+historicos/z.blocks
+historicos/z.break
+historicos/data.5
+apoio/reconstruidas.lisp
+apoio/ambiente.lisp
+apoio/compiladas.lisp
+apoio/variaveis.lisp
+#
+# 2. Ajustes publicados da rodada 16 do emulador (os mesmos arquivos de ../10_moby_rodando/)
+ajustes/rodada16/findq_reconstruida.lisp
+ajustes/rodada16/smone_corrigida.lisp
+ajustes/rodada16/smprop_corrigida.lisp
+ajustes/rodada16/smadj_corrigida.lisp
+ajustes/rodada16/modal_zerado.lisp
+ajustes/rodada16/goalize2_corrigida.lisp
+ajustes/rodada16/smit3_corrigida.lisp
+ajustes/rodada16/who_corrigida.lisp
+ajustes/rodada16/loc_thmlist_corrigida.lisp
+ajustes/rodada16/smrsq_corrigida.lisp
+ajustes/rodada16/smng1_corrigida.lisp
+ajustes/rodada16/size_corrigida.lisp
+ajustes/rodada16/ans2_corrigida.lisp
+#
+# 3. Como esta compilado na imagem MOBY DUMP (enderecos octais no cabecalho de cada arquivo)
+ajustes/imagem/shrdlu_como_na_imagem.lisp
+ajustes/imagem/conj_como_na_imagem.lisp
+apoio/macr_z.lisp
+ajustes/imagem/ng_como_na_imagem.lisp
+ajustes/rodada16/remendo_ng_no_texto.lisp
+ajustes/imagem/threturn_como_na_imagem.lisp
+ajustes/imagem/planner_como_na_imagem.lisp
+ajustes/imagem/etaoin_como_na_imagem.lisp
+#
+# 4. Paradas do Micro-Planner (THERT): a resposta NIL do operador ja vem embutida
+apoio/lote.lisp

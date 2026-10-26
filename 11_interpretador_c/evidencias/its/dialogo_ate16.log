@@ -1,0 +1,18 @@
+/home/claude/work/its_tape/dialogo2.py:10: SyntaxWarning: invalid escape sequence '\;'
+  elif c == ';': key('-l', '--', '\;')
+1 pick up a big red block. -> PICK UP A BIG RED BLOCK. | * | *  OK. []
+2 grasp the pyramid. -> GR | READY/ | ASP THE PYRAMID. | * | *  I DON'T KNOW WHICH PYRAMID YOU MEAN. []
+3 find a block which is taller than the one you are holding and put it into the box. -> FIND | READY/ | A BLOCK WHICH IS TALLER THAN THE ONE YOU ARE HOLDING AND PUT IT INTO THE BOX. | * | *   OK. | BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM | HOLDING. | *  OK. | READY/ [espaco]
+4 what does the box contain? -> WHAT DOES THE BOX CONTAIN? | * | *  THE BLUE PYRAMID AND THE BLUE BLOCK. []
+5 what is the pyramid supported by? -> WHAT | READY/ | IS THE PYRAMID SUPPORTED BY? | * | *  THE BOX. []
+6 how many blocks are not in the box? -> HOW | READY/ | MANY BLOCKS ARE NOT IN THE BOX? | * | * FOUR OF THEM. []
+7 is at least one of them narrower than the one which i told you to pick up? -> IS A | READY/ | T LEAST ONE OF THEM NARROWER THAN THE ONE WHICH I TOLD YOU TO PICK UP? | * | BY "THEM", I ASSUME YOU MEAN THE HOW MANY BLOCKS AM NOT IN THE BOX. | *  YES,  THE RED CUBE. []
+8 is it supported? -> I | READY/ | S IT SUPPORTED? | * | BY "IT", I ASSUME YOU MEAN THE AT LEAST ONE OF THEM NARROWER THAN THE | ONE WHICH YOU TOLD I TO PICK UP. | *  YES,  BY THE TABLE. []
+9 can the table pick up blocks? -> CAN | READY/ | THE TABLE PICK UP BLOCKS? | * | *  NO. []
+10 can a pyramid be supported by a block? -> C | READY/ | AN A PYRAMID BE SUPPORTED BY A BLOCK? | * | *  YES. []
+11 can a pyramid support a pyramid? -> CAN | READY/ | A PYRAMID SUPPORT A PYRAMID? | * | *  I DON'T KNOW. []
+12 stack up two pyramids. -> STAC | READY/ | K UP TWO PYRAMIDS. | * | *  I CAN'T. []
+13 the blue pyramid is nice. -> THE | READY/ | BLUE PYRAMID IS NICE. | * | *  I UNDERSTAND. []
+14 i like blocks which are not red, but i don't like anything which supports a pyramid. -> I LI | READY/ | KE BLOCKS WHICH ARE NOT RED, BUT I DON'T LIKE ANYTHING WHICH SUPPORTS A PYRAMI! | D. | * | (F31-ANSTHM TH1) | *  I UNDERSTAND. | (F31-ANSTHM TH2) | *  I UNDERSTAND. []
+15 do i like the box? -> D | READY/ | O I LIKE THE BOX? | * | *  NO. []
+16 do i like anything in the box? -> MBIND THGOAL THPROG T | HFIND THREMBIND) NIL) | (F31-THFAIL-DEPOIS NIL (THPROG THMUNG THREMBIND THGOAL THPROG THFIND THR | EMBIND) 1) | (F31-RESULTADO (:B10 :B4)) | *  YES, TWO THINGS:  THE BLUE BLOCK AND THE BLUE PYRAMID | READY/ []

@@ -1,0 +1,188 @@
+
+;PURE UNBOUND VARIABLE - 
+
+;EVENTLIST UNBOUND VARIABLE - 
+
+
+TC-CALL 
+
+TC-CLEARTOP 
+
+TC-GET-RID-OF 
+
+TC-GRASP 
+
+TC-NAME 
+
+TC-NOTICE 
+
+TC-PACK 
+
+TC-PICKUP 
+
+TC-PUTIN 
+
+TC-PUTON 
+
+TC-RAISEHAND 
+
+TC-STACKUP 
+
+TC-UNGRASP 
+
+TC-ON 
+
+TC-PHYSOB 
+
+
+((#IS :B1 #BLOCK)) 
+
+((#IS :B2 #PYRAMID)) 
+
+((#IS :B3 #BLOCK)) 
+
+((#IS :B4 #PYRAMID)) 
+
+((#IS :B5 #PYRAMID)) 
+
+((#IS :B6 #BLOCK)) 
+
+((#IS :B7 #BLOCK)) 
+
+((#IS :B10 #BLOCK)) 
+
+((#IS #RED #COLOR)) 
+
+((#IS #BLUE #COLOR)) 
+
+((#IS #GREEN #COLOR)) 
+
+((#IS #WHITE #COLOR)) 
+
+((#IS #BLACK #COLOR)) 
+
+((#IS #RECTANGULAR #SHAPE)) 
+
+((#IS #ROUND #SHAPE)) 
+
+((#IS #POINTED #SHAPE)) 
+
+((#IS :SHRDLU #ROBOT)) 
+
+((#IS :FRIEND #PERSON)) 
+
+((#IS :HAND #HAND)) 
+
+((#AT :B1 (100 100 0))) 
+
+((#AT :B2 (100 100 100))) 
+
+((#AT :B3 (400 0 0))) 
+
+((#AT :B4 (640 640 1))) 
+
+((#AT :B5 (500 100 200))) 
+
+((#AT :B6 (0 300 0))) 
+
+((#AT :B7 (0 240 300))) 
+
+((#AT :B10 (300 640 0))) 
+
+((#SUPPORT :B1 :B2)) 
+
+((#SUPPORT :B3 :B5)) 
+
+((#SUPPORT :B6 :B7)) 
+
+((#CLEARTOP :B2)) 
+
+((#CLEARTOP :B4)) 
+
+((#CLEARTOP :B5)) 
+
+((#CLEARTOP :B7)) 
+
+((#CLEARTOP :B10)) 
+
+((#MANIP :B1)) 
+
+((#MANIP :B2)) 
+
+((#MANIP :B3)) 
+
+((#MANIP :B4)) 
+
+((#MANIP :B5)) 
+
+((#MANIP :B6)) 
+
+((#MANIP :B7)) 
+
+((#MANIP :B10)) 
+
+((#SUPPORT :TABLE :B1)) 
+
+((#SUPPORT :TABLE :B3)) 
+
+((#SUPPORT :BOX :B4)) 
+
+((#SUPPORT :TABLE :B10)) 
+
+((#SUPPORT :TABLE :B6)) 
+
+((#SUPPORT :TABLE :BOX)) 
+
+((#AT :BOX (600 600 0))) 
+
+((#IS :BOX #BOX)) 
+
+((#IS :TABLE #TABLE)) 
+
+((#CONTAIN :BOX :B4)) 
+
+((#SHAPE :B1 #RECTANGULAR)) 
+
+((#SHAPE :B3 #RECTANGULAR)) 
+
+((#SHAPE :B2 #POINTED)) 
+
+((#SHAPE :B4 #POINTED)) 
+
+((#SHAPE :B5 #POINTED)) 
+
+((#SHAPE :B6 #RECTANGULAR)) 
+
+((#SHAPE :B7 #RECTANGULAR)) 
+
+((#SHAPE :B10 #RECTANGULAR)) 
+
+((#COLOR :B1 #RED)) 
+
+((#COLOR :B2 #GREEN)) 
+
+((#COLOR :B3 #GREEN)) 
+
+((#COLOR :B4 #BLUE)) 
+
+((#COLOR :B5 #RED)) 
+
+((#COLOR :B6 #RED)) 
+
+((#COLOR :B7 #GREEN)) 
+
+((#COLOR :B10 #BLUE)) 
+
+((#COLOR :BOX #WHITE)) 
+
+((#COLOR :TABLE #BLACK)) 
+
+((#CALL :SHRDLU SHRDLU)) 
+
+((#CALL :FRIEND YOU)) 
+
+(REMENDO-NG 1 1) 
+F31-TESTE-MINIMO-INICIO 
+(F31-ORDEM (TXA TXB)) 
+(F31-RESULTADO (#FFF 7)) 
+F31-TESTE-MINIMO-FIM 

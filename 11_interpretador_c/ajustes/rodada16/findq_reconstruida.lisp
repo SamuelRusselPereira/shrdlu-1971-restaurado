@@ -1,0 +1,1 @@
+(DEFUN FINDQ (X) (COND ((ISX X (QUOTE NG)) X) ((* H PV (QUEST)))))

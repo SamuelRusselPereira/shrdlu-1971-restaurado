@@ -1,0 +1,260 @@
+
+;PURE UNBOUND VARIABLE - 
+historicos/plnr.176  331 formas, 0 erros
+apoio/boot1.lisp    9 formas, 0 erros
+apoio/macr_z.lisp    7 formas, 0 erros
+historicos/z.syscom   80 formas, 0 erros
+historicos/z.gramar   16 formas, 0 erros
+historicos/z.dictio   48 formas, 0 erros
+historicos/z.semant  110 formas, 0 erros
+
+;EVENTLIST UNBOUND VARIABLE - 
+historicos/z.answer   39 formas, 0 erros
+
+
+TC-CALL 
+
+TC-CLEARTOP 
+
+TC-GET-RID-OF 
+
+TC-GRASP 
+
+TC-NAME 
+
+TC-NOTICE 
+
+TC-PACK 
+
+TC-PICKUP 
+
+TC-PUTIN 
+
+TC-PUTON 
+
+TC-RAISEHAND 
+
+TC-STACKUP 
+
+TC-UNGRASP 
+
+TC-ON 
+
+TC-PHYSOB 
+historicos/z.blocks  102 formas, 0 erros
+historicos/z.break    8 formas, 0 erros
+
+
+((#IS :B1 #BLOCK)) 
+
+((#IS :B2 #PYRAMID)) 
+
+((#IS :B3 #BLOCK)) 
+
+((#IS :B4 #PYRAMID)) 
+
+((#IS :B5 #PYRAMID)) 
+
+((#IS :B6 #BLOCK)) 
+
+((#IS :B7 #BLOCK)) 
+
+((#IS :B10 #BLOCK)) 
+
+((#IS #RED #COLOR)) 
+
+((#IS #BLUE #COLOR)) 
+
+((#IS #GREEN #COLOR)) 
+
+((#IS #WHITE #COLOR)) 
+
+((#IS #BLACK #COLOR)) 
+
+((#IS #RECTANGULAR #SHAPE)) 
+
+((#IS #ROUND #SHAPE)) 
+
+((#IS #POINTED #SHAPE)) 
+
+((#IS :SHRDLU #ROBOT)) 
+
+((#IS :FRIEND #PERSON)) 
+
+((#IS :HAND #HAND)) 
+
+((#AT :B1 (100 100 0))) 
+
+((#AT :B2 (100 100 100))) 
+
+((#AT :B3 (400 0 0))) 
+
+((#AT :B4 (640 640 1))) 
+
+((#AT :B5 (500 100 200))) 
+
+((#AT :B6 (0 300 0))) 
+
+((#AT :B7 (0 240 300))) 
+
+((#AT :B10 (300 640 0))) 
+
+((#SUPPORT :B1 :B2)) 
+
+((#SUPPORT :B3 :B5)) 
+
+((#SUPPORT :B6 :B7)) 
+
+((#CLEARTOP :B2)) 
+
+((#CLEARTOP :B4)) 
+
+((#CLEARTOP :B5)) 
+
+((#CLEARTOP :B7)) 
+
+((#CLEARTOP :B10)) 
+
+((#MANIP :B1)) 
+
+((#MANIP :B2)) 
+
+((#MANIP :B3)) 
+
+((#MANIP :B4)) 
+
+((#MANIP :B5)) 
+
+((#MANIP :B6)) 
+
+((#MANIP :B7)) 
+
+((#MANIP :B10)) 
+
+((#SUPPORT :TABLE :B1)) 
+
+((#SUPPORT :TABLE :B3)) 
+
+((#SUPPORT :BOX :B4)) 
+
+((#SUPPORT :TABLE :B10)) 
+
+((#SUPPORT :TABLE :B6)) 
+
+((#SUPPORT :TABLE :BOX)) 
+
+((#AT :BOX (600 600 0))) 
+
+((#IS :BOX #BOX)) 
+
+((#IS :TABLE #TABLE)) 
+
+((#CONTAIN :BOX :B4)) 
+
+((#SHAPE :B1 #RECTANGULAR)) 
+
+((#SHAPE :B3 #RECTANGULAR)) 
+
+((#SHAPE :B2 #POINTED)) 
+
+((#SHAPE :B4 #POINTED)) 
+
+((#SHAPE :B5 #POINTED)) 
+
+((#SHAPE :B6 #RECTANGULAR)) 
+
+((#SHAPE :B7 #RECTANGULAR)) 
+
+((#SHAPE :B10 #RECTANGULAR)) 
+
+((#COLOR :B1 #RED)) 
+
+((#COLOR :B2 #GREEN)) 
+
+((#COLOR :B3 #GREEN)) 
+
+((#COLOR :B4 #BLUE)) 
+
+((#COLOR :B5 #RED)) 
+
+((#COLOR :B6 #RED)) 
+
+((#COLOR :B7 #GREEN)) 
+
+((#COLOR :B10 #BLUE)) 
+
+((#COLOR :BOX #WHITE)) 
+
+((#COLOR :TABLE #BLACK)) 
+
+((#CALL :SHRDLU SHRDLU)) 
+
+((#CALL :FRIEND YOU)) 
+historicos/data.5   11 formas, 0 erros
+apoio/reconstruidas.lisp   13 formas, 0 erros
+apoio/ambiente.lisp    3 formas, 0 erros
+apoio/compiladas.lisp  454 formas, 0 erros
+apoio/variaveis.lisp    5 formas, 0 erros
+ajustes/rodada16/findq_reconstruida.lisp    1 formas, 0 erros
+ajustes/rodada16/smone_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smprop_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smadj_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/modal_zerado.lisp    2 formas, 0 erros
+ajustes/rodada16/goalize2_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smit3_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/who_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/loc_thmlist_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smrsq_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/smng1_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/size_corrigida.lisp    1 formas, 0 erros
+ajustes/rodada16/ans2_corrigida.lisp    1 formas, 0 erros
+ajustes/imagem/shrdlu_como_na_imagem.lisp    2 formas, 0 erros
+ajustes/imagem/conj_como_na_imagem.lisp    2 formas, 0 erros
+apoio/macr_z.lisp    7 formas, 0 erros
+ajustes/imagem/ng_como_na_imagem.lisp    5 formas, 0 erros
+
+ajustes/rodada16/remendo_ng_no_texto.lisp    3 formas, 0 erros
+ajustes/imagem/threturn_como_na_imagem.lisp    2 formas, 0 erros
+ajustes/imagem/planner_como_na_imagem.lisp   10 formas, 0 erros
+ajustes/imagem/etaoin_como_na_imagem.lisp   20 formas, 0 erros
+apoio/lote.lisp    2 formas, 0 erros
+(REMENDO-NG 1 1) 
+READY/ WHAT DOES THE BOX CONTAIN?
+
+* 
+*  THE BLUE PYRAMID.
+READY/ HOW MANY BLOCKS ARE NOT IN THE BOX?
+
+* 
+* FIVE OF THEM.
+READY/ IS THE BLUE BLOCK RED?
+
+*  *I DON'T UNDERSTAND 
+READY/ IS THE BLUE PYRAMID IN THE BOX?
+
+* 
+*  YES.
+READY/ WHAT IS THE COLOR OF THE BOX?
+
+* 
+(SMNG2 THE COLOR) 
+READY/ HOW MANY PYRAMIDS ARE THERE?
+
+* 
+* THREE OF THEM.
+READY/ PICK UP THE GREEN PYRAMID.
+
+* 
+*  OK.
+READY/ WHAT ARE YOU HOLDING?
+
+* 
+*  THE GREEN PYRAMID.
+READY/ PUT IT ON THE RED CUBE.
+
+*  *I DON'T UNDERSTAND 
+READY/ WHAT IS THE GREEN PYRAMID SUPPORTED BY?
+
+* 
+* NOTHING THINGS.
+READY/ 
